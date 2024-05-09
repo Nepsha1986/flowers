@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 import "./globals.css";
 
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UserProvider>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <AntdRegistry>{children}</AntdRegistry>
+        </body>
       </UserProvider>
     </html>
   );

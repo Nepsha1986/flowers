@@ -1,0 +1,21 @@
+.layout__wrapper {
+  display: grid;
+  grid-template:
+    "header header header" 80px
+    "sidebar main main" calc(100dvh - 80px) / 320px auto auto;
+}
+
+.layout__header {
+  grid-area: header;
+  padding: 10px 15px;
+  background: var(--c-gray-100);
+}
+
+.layout__main {
+  grid-area: main;
+}
+
+.layout__sidebar {
+  background: var(--c-gray-50);
+  grid-area: sidebar;
+}
