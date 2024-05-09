@@ -1,0 +1,16 @@
+.layout__wrapper {
+  display: grid;
+  grid-template:
+    "header header"
+    "main main" 1fr;
+}
+
+.layout__header {
+  grid-area: header;
+  padding: 10px 15px;
+  background: var(--c-gray-100);
+}
+
+.layout__main {
+  grid-area: main;
+}
