@@ -1,3 +1,9 @@
+import ProductsList from "@/containers/ProductsList";
+
 export default function Dashboard() {
-  return <div>Dashboard Page Placeholder</div>;
+  return (
+    <div>
+      <ProductsList />
+    </div>
+  );
 }
