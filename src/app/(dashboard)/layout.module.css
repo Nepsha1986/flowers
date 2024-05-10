@@ -9,10 +9,14 @@
   grid-area: header;
   padding: 10px 15px;
   background: var(--c-gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .layout__main {
   grid-area: main;
+  padding: 2rem 1rem;
 }
 
 .layout__sidebar {

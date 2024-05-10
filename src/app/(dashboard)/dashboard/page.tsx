@@ -1,5 +1,5 @@
-import styles from "./page.module.css";
+import CreateProductForm from "@/containers/CreateProductForm";
 
 export default function Dashboard() {
-  return <div>Dashboard</div>;
+  return <div>Dashboard Page Placeholder</div>;
 }

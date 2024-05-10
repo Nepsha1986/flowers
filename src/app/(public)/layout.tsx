@@ -1,4 +1,4 @@
-import SignIn from "@/components/SignIn";
+import SignIn from "@/containers/SignIn/SignIn";
 
 import styles from "./layout.module.css";
 export default function PublicPageLayout({
