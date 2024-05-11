@@ -1,9 +1,11 @@
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+
 import Navigation from "@/app/(dashboard)/_containers/Navigation";
 import SignIn from "@/containers/SignIn/SignIn";
 
 import styles from "./layout.module.css";
 
-export default function DashboardLayout({
+async function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -22,3 +24,6 @@ export default function DashboardLayout({
     </div>
   );
 }
+
+// @ts-ignore
+export default withPageAuthRequired(DashboardLayout, { returnTo: '/dashboard' });
