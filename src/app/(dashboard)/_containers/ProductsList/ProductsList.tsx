@@ -2,7 +2,10 @@
 import { useEffect, useState } from "react";
 import { List } from "antd";
 
-import { ProductDto, productService } from "@/services/vendor/product.service";
+import {
+  ProductDto,
+  productService,
+} from "@/app/(dashboard)/_services/vendor/product.service";
 
 const ProductsList = () => {
   const [products, setProducts] = useState<ProductDto[]>([]);

@@ -1,4 +1,4 @@
-import CreateProductForm from "@/containers/CreateProductForm";
+import CreateProductForm from "../../_containers/CreateProductForm";
 
 export default function Products() {
   return (

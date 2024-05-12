@@ -1,4 +1,4 @@
-import ProductsList from "@/containers/ProductsList";
+import ProductsList from "../_containers/ProductsList";
 
 export default function Dashboard() {
   return (
