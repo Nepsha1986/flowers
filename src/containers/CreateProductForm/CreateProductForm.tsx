@@ -2,7 +2,7 @@
 import React from "react";
 import { Button, Form, FormProps, Input, InputNumber } from "antd";
 
-import { productService } from "@/services/product.service";
+import { productService } from "@/services/vendor/product.service";
 
 const formItemLayout = {
   labelCol: {

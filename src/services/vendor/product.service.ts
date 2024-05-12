@@ -9,9 +9,9 @@ interface ProductService {
 }
 const productService: ProductService = {
   getAll: async () =>
-    await fetch("/api/v1/products").then((data) => data.json()),
+    await fetch("/api/v1/vendor/products").then((data) => data.json()),
   add: async (product) =>
-    await fetch("/api/v1/products", {
+    await fetch("/api/v1/vendor/products", {
       method: "post",
       body: JSON.stringify(product),
     }),

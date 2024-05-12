@@ -1,13 +1,20 @@
 import z from "zod";
+import { getSession } from "@auth0/nextjs-auth0";
 
 import db from "@/backend/db";
 import { ProductSchema } from "@/backend/models/productSchema";
 
 export async function GET() {
   try {
+    const session = await getSession();
+    const user = session?.user;
+    if (!user) throw new Error("Error");
+
+    console.log(user);
+
     const client = await db;
     const collection = client.db("flowers_app").collection("products");
-    const result = await collection.find().toArray();
+    const result = await collection.find({ vendorId: user.sub }).toArray();
 
     return new Response(JSON.stringify(result));
   } catch (e) {
@@ -17,8 +24,12 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
+    const session = await getSession();
+    const user = session?.user;
+    if (!user) throw new Error("Error");
+
     const body = await request.json();
-    const newProduct = ProductSchema.parse(body);
+    const newProduct = ProductSchema.parse({ ...body, vendorId: user.sub });
 
     const client = await db;
     const collection = client.db("flowers_app").collection("products");

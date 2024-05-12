@@ -26,4 +26,6 @@ async function DashboardLayout({
 }
 
 // @ts-ignore
-export default withPageAuthRequired(DashboardLayout, { returnTo: '/dashboard' });
+export default withPageAuthRequired(DashboardLayout, {
+  returnTo: "/dashboard",
+});
