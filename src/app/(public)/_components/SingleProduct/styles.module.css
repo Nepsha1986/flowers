@@ -1,0 +1,16 @@
+.singleProduct {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.singleProduct__dataWrap {
+  flex-grow: 1;
+  flex-basis: 500px;
+  padding: 1rem;
+}
+
+.singleProduct__imgWrap {
+  flex-grow: 1;
+  flex-basis: 500px;
+  padding: 1rem;
+}

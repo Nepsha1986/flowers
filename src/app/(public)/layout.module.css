@@ -18,6 +18,7 @@
 
 .layout__main {
   grid-area: main;
+  padding: 2rem 15px;
 }
 
 .layout__footer {
