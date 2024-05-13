@@ -1,16 +1,31 @@
 .layout__wrapper {
+  max-width: var(--app-width);
+  margin: 0 auto;
   display: grid;
+  min-height: 100dvh;
   grid-template:
-    "header header"
-    "main main" 1fr;
+    "header header" auto
+    "main main" 1fr
+    "footer footer" auto;
 }
 
 .layout__header {
   grid-area: header;
   padding: 10px 15px;
-  background: var(--c-gray-100);
+  display: flex;
+  justify-content: flex-end;
 }
 
 .layout__main {
   grid-area: main;
+}
+
+.layout__footer {
+  grid-area: footer;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 1.25rem 15px 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

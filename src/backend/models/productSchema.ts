@@ -6,3 +6,5 @@ export const ProductSchema = z.object({
   description: z.string(),
   price: z.number(),
 });
+
+export const ProductModel = ProductSchema.extend({ _id: z.string() });

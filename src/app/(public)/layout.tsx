@@ -13,6 +13,10 @@ export default function PublicPageLayout({
       </header>
 
       <main className={styles.layout__main}>{children}</main>
+
+      <footer className={styles.layout__footer}>
+        <span>© 2024, GiftIdea. All Rights Reserved.</span>
+      </footer>
     </div>
   );
 }

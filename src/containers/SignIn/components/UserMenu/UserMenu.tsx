@@ -19,7 +19,6 @@ const UserMenu: React.FC<Props> = ({ userName }) => {
     <Dropdown
       menu={{ items }}
       placement="bottom"
-      arrow={true}
       trigger={["click"]}
     >
       <a onClick={(e) => e.preventDefault()}>

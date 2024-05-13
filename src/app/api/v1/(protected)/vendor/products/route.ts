@@ -10,8 +10,6 @@ export async function GET() {
     const user = session?.user;
     if (!user) throw new Error("Error");
 
-    console.log(user);
-
     const client = await db;
     const collection = client.db("flowers_app").collection("products");
     const result = await collection.find({ vendorId: user.sub }).toArray();
