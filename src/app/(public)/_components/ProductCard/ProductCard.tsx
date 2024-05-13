@@ -1,20 +1,23 @@
 import { forwardRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
 import img from "@/assets/temp/buaquete.webp";
 
 import styles from "./styles.module.css";
 
 interface Props extends React.ComponentPropsWithoutRef<"div"> {
+  id: string;
   title: string;
   description: string;
   price: number;
 }
 
 const ProductCard = forwardRef<React.RefObject<"div">, Props>(
-  ({ title, description, price }: Props, ref) => {
+  ({ id, title, description, price }: Props, ref) => {
     return (
-      <a
-        href={"/placeholder"}
+      <Link
+        href={`/products/${id}`}
         data-testid="product_card"
         className={styles.productCard}
       >
@@ -29,7 +32,7 @@ const ProductCard = forwardRef<React.RefObject<"div">, Props>(
 
           <p className={styles.productCard__desc}>{description}</p>
         </div>
-      </a>
+      </Link>
     );
   },
 );

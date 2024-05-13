@@ -9,8 +9,9 @@ const ProductsList = async () => {
   return (
     <Row gutter={16} style={{ paddingTop: "1rem", paddingBottom: "1rem" }}>
       {products.map((i) => (
-        <Col key={i._id} span={8}>
+        <Col key={i._id} span={8} style={{ marginBottom: "16px" }}>
           <ProductCard
+            id={i._id}
             title={i.name}
             description={i.description}
             price={i.price}

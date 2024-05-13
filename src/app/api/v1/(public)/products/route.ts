@@ -1,5 +1,5 @@
 import db from "@/backend/db";
-
+export const dynamic = "force-dynamic";
 export async function GET() {
   try {
     const client = await db;
