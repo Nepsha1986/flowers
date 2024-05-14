@@ -1,24 +1,32 @@
-import CitiesLinks from "@/app/(public)/_containers/CitiesLinks";
+import styles from "./styles.module.css";
+
+import AppLogo from "@/app/(public)/_components/AppLogo";
+import AppMainNav from "@/app/(public)/_components/AppMainNav";
+import HomepageIntro from "@/app/(public)/_components/HomepageIntro";
+import SignIn from "@/containers/SignIn";
 
 export default function Home() {
   return (
-    <>
-      <h1>Send flowers - Online flower delivery</h1>
-      <p>
-        Welcome to blumenshop.com - THE online flower delivery service for fresh
-        flowers and successful surprises. We have a large selection of bouquets
-        to surprise your family, friends or colleagues. Our seasonal cut flowers
-        are delivered as quickly as possible and therefore offer the best
-        quality at the best price.
-      </p>
-      <p>
-        With us, you can send flowers throughout Germany and have them delivered
-        on the day of your choice with our flower delivery service. The free
-        greeting card or video message makes your flower greeting a personalised
-        gift.
-      </p>
+    <div
+      data-testid="public_layout"
+      className={styles.layout__wrapper}
+      style={{ background: "no-repeat 95% center/40% url(./buaquete2.png)" }}
+    >
+      <header className={styles.layout__header}>
+        <AppLogo />
+        <AppMainNav />
+      </header>
 
-      <CitiesLinks />
-    </>
+      <main className={styles.layout__main}>
+        <HomepageIntro />
+      </main>
+
+      <footer className={styles.layout__footer}>
+        <span>© 2024, GiftIdea. All Rights Reserved.</span>
+        <span>
+          <SignIn />
+        </span>
+      </footer>
+    </div>
   );
 }

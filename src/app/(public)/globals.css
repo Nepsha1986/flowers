@@ -1,0 +1,50 @@
+:root {
+  --app-width: 1200px;
+
+  --c-gray-50: #f9fafb;
+  --c-gray-100: #f3f4f6;
+  --c-gray-200: #e5e7eb;
+  --c-gray-300: #d1d5db;
+  --c-gray-400: #9ca3af;
+  --c-gray-500: #6b7280;
+  --c-gray-600: #4b5563;
+  --c-gray-700: #374151;
+  --c-gray-800: #1f2937;
+  --c-gray-900: #111827;
+  --c-gray-950: #030712;
+
+  --c-primary: #eec902;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  --font-primary: var(--font-main);
+  --font-secondary: var(--font-alt);
+
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #f8f9fa;
+  font-family: var(--font-primary);
+  font-weight: 300;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-weight: 500;
+}

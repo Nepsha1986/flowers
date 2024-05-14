@@ -1,0 +1,22 @@
+.homepageIntro {
+  max-width: 600px;
+}
+
+.homepageIntro__title {
+  font-size: clamp(2rem, 5vw, 5rem);
+  margin-bottom: 1rem;
+}
+
+.homepageIntro__supTitle {
+  color: var(--c-primary);
+  font-family: var(--font-secondary);
+  font-size: 1.8rem;
+}
+
+.homepageIntro__description {
+  color: var(--c-gray-500);
+  font-size: 1.25rem;
+}
+
+.homepageIntro__searchBlock {
+}
