@@ -1,4 +1,3 @@
-import ProductsList from "@/app/(public)/_containers/ProductsList";
 import CitiesLinks from "@/app/(public)/_containers/CitiesLinks";
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
       </p>
 
       <CitiesLinks />
-      <ProductsList />
     </>
   );
 }

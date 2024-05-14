@@ -13,7 +13,7 @@ export default function Flowers(context: { params: { city: string } }) {
   return (
     <>
       <h1>Send Flowers - {city}</h1>
-      <ProductsList />
+      <ProductsList country="Ukraine" city={city} />
     </>
   );
 }

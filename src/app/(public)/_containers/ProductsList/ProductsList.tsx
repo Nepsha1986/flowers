@@ -3,8 +3,13 @@ import { Col, Row } from "antd";
 import { productService } from "@/app/(public)/_services/product.service";
 import ProductCard from "@/app/(public)/_components/ProductCard";
 
-const ProductsList = async () => {
-  const products = await productService.getAll();
+interface Props {
+  city: string;
+  country: string;
+}
+
+const ProductsList = async ({ city, country }: Props) => {
+  const products = await productService.getAll({ city, country });
 
   return (
     <Row gutter={16} style={{ paddingTop: "1rem", paddingBottom: "1rem" }}>
