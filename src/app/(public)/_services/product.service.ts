@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { ProductModel } from "@/backend/models/productSchema";
-import { API_URL } from "@/variables";
+import { API_URL } from "@/lib/variables";
 
 type ProductReqDto = z.infer<typeof ProductModel>;
 

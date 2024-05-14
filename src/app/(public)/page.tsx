@@ -1,4 +1,5 @@
 import ProductsList from "@/app/(public)/_containers/ProductsList";
+import CitiesLinks from "@/app/(public)/_containers/CitiesLinks";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
         greeting card or video message makes your flower greeting a personalised
         gift.
       </p>
+
+      <CitiesLinks />
       <ProductsList />
     </>
   );
