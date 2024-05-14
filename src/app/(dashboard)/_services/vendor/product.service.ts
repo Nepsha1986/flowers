@@ -1,11 +1,8 @@
-import { z } from "zod";
-import { ProductSchema } from "@/backend/models/productSchema";
-
-type ProductDto = z.infer<typeof ProductSchema>;
+import { ProductResDto, ProductReqDto } from "@/backend/models/productSchema";
 
 interface ProductService {
-  getAll: () => Promise<ProductDto[]>;
-  add: (product: ProductDto) => Promise<Response>;
+  getAll: () => Promise<ProductResDto[]>;
+  add: (product: ProductReqDto) => Promise<Response>;
 }
 const productService: ProductService = {
   getAll: async () =>
@@ -17,4 +14,4 @@ const productService: ProductService = {
     }),
 };
 
-export { productService, type ProductDto };
+export { productService, type ProductResDto, type ProductReqDto };

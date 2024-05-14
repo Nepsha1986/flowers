@@ -1,13 +1,9 @@
-import { z } from "zod";
-
-import { ProductModel } from "@/backend/models/productSchema";
+import { ProductResDto } from "@/backend/models/productSchema";
 import { API_URL } from "@/lib/variables";
 
-type ProductReqDto = z.infer<typeof ProductModel>;
-
 interface ProductService {
-  getAll: () => Promise<ProductReqDto[]>;
-  get: (id: string) => Promise<ProductReqDto>;
+  getAll: () => Promise<ProductResDto[]>;
+  get: (id: string) => Promise<ProductResDto>;
 }
 const productService: ProductService = {
   getAll: async () =>
@@ -16,4 +12,4 @@ const productService: ProductService = {
     await fetch(`${API_URL}/api/v1/products/${id}`).then((data) => data.json()),
 };
 
-export { productService, type ProductReqDto };
+export { productService, type ProductResDto };

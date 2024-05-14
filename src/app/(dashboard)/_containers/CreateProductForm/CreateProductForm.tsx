@@ -19,11 +19,19 @@ type FieldType = {
   name: string;
   description: string;
   price: number;
+  country: string;
+  city: string;
 };
 
 const CreateProductForm: React.FC = () => {
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
-    await productService.add(values);
+    await productService.add({
+      ...values,
+      location: {
+        country: values.country,
+        city: values.city,
+      },
+    });
   };
 
   return (
@@ -42,6 +50,23 @@ const CreateProductForm: React.FC = () => {
         rules={[{ required: true, message: "Please input!" }]}
       >
         <Input.TextArea />
+      </Form.Item>
+
+      <Form.Item
+        label="Country"
+        name="country"
+        initialValue="Ukraine"
+        rules={[{ required: true, message: "Please input!" }]}
+      >
+        <Input disabled placeholder="Ukraine" />
+      </Form.Item>
+
+      <Form.Item
+        label="City"
+        name="city"
+        rules={[{ required: true, message: "Please input!" }]}
+      >
+        <Input />
       </Form.Item>
 
       <Form.Item

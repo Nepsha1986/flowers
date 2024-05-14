@@ -2,7 +2,7 @@ import z from "zod";
 import { getSession } from "@auth0/nextjs-auth0";
 
 import db from "@/backend/db";
-import { ProductSchema } from "@/backend/models/productSchema";
+import { NewProductValidationSchema } from "@/backend/models/productSchema";
 
 export async function GET() {
   try {
@@ -27,7 +27,10 @@ export async function POST(request: Request) {
     if (!user) throw new Error("Error");
 
     const body = await request.json();
-    const newProduct = ProductSchema.parse({ ...body, vendorId: user.sub });
+    const newProduct = NewProductValidationSchema.parse({
+      ...body,
+      vendorId: user.sub,
+    });
 
     const client = await db;
     const collection = client.db("flowers_app").collection("products");
