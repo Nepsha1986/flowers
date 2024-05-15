@@ -1,12 +1,11 @@
 import { notFound } from "next/navigation";
 import ProductsList from "@/app/(public)/_containers/ProductsList";
-import { cities } from "@/lib/cities";
+import { citiesUrls } from "@/lib/cities";
 
 export default function Flowers(context: { params: { city: string } }) {
   const city = context.params.city;
 
-  // @ts-ignore
-  if (!cities.ua.includes(city)) {
+  if (!citiesUrls.ua.includes(city)) {
     notFound();
   }
 

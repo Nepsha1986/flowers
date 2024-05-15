@@ -19,7 +19,7 @@ const CitySelect = () => {
         placeholder="Select city"
         style={{ width: "320px", marginRight: "10px" }}
         options={cities.ua.map((i) => ({
-          value: i,
+          value: i.toLowerCase().replace(" ", "-"),
           label: i,
         }))}
       />
