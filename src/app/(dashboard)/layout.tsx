@@ -1,31 +1,29 @@
-import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
-import Navigation from "@/app/(dashboard)/_containers/Navigation";
-import SignIn from "@/containers/SignIn/SignIn";
+import "./globals.css";
 
-import styles from "./layout.module.css";
+const inter = Inter({ subsets: ["latin"] });
 
-async function DashboardLayout({
+export const metadata: Metadata = {
+  title: "-",
+  description: "-",
+};
+
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <div data-testid="dashboard_layout" className={styles.layout__wrapper}>
-      <header className={styles.layout__header}>
-        <SignIn />
-      </header>
-
-      <aside className={styles.layout__sidebar}>
-        <Navigation />
-      </aside>
-
-      <main className={styles.layout__main}>{children}</main>
-    </div>
+    <html lang="en">
+      <UserProvider>
+        <body className={inter.className}>
+          <AntdRegistry>{children}</AntdRegistry>
+        </body>
+      </UserProvider>
+    </html>
   );
 }
-
-// @ts-ignore
-export default withPageAuthRequired(DashboardLayout, {
-  returnTo: "/dashboard",
-});

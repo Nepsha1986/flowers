@@ -1,5 +1,4 @@
 .layout__wrapper {
-  max-width: var(--app-width);
   margin: 0 auto;
   display: grid;
   min-height: 100dvh;
@@ -13,12 +12,19 @@
   grid-area: header;
   padding: 10px 15px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .layout__main {
   grid-area: main;
   padding: 2rem 15px;
+  max-width: 1300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
 }
 
 .layout__footer {
