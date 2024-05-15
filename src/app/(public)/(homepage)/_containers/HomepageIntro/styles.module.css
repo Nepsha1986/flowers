@@ -1,5 +1,6 @@
 .homepageIntro {
   max-width: 600px;
+  margin: 2rem 0 9rem;
 }
 
 .homepageIntro__title {
@@ -11,6 +12,7 @@
   color: var(--c-primary);
   font-family: var(--font-secondary);
   font-size: 1.8rem;
+  margin-top: 0;
 }
 
 .homepageIntro__description {

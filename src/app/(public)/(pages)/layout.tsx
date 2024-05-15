@@ -1,4 +1,5 @@
-import SignIn from "@/containers/SignIn/SignIn";
+import AppLogo from "@/app/(public)/_components/AppLogo";
+import AppMainNav from "@/app/(public)/_components/AppMainNav";
 
 import styles from "./layout.module.css";
 export default function PublicPageLayout({
@@ -9,7 +10,8 @@ export default function PublicPageLayout({
   return (
     <div data-testid="public_layout" className={styles.layout__wrapper}>
       <header className={styles.layout__header}>
-        <SignIn />
+        <AppLogo />
+        <AppMainNav />
       </header>
 
       <main className={styles.layout__main}>{children}</main>

@@ -1,14 +1,17 @@
-import styles from "./styles.module.css";
-
+import SignIn from "@/containers/SignIn/SignIn";
 import AppLogo from "@/app/(public)/_components/AppLogo";
 import AppMainNav from "@/app/(public)/_components/AppMainNav";
-import HomepageIntro from "@/app/(public)/_components/HomepageIntro";
-import SignIn from "@/containers/SignIn";
 
-export default function Home() {
+import styles from "./layout.module.css";
+
+export default function HomePageLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <div
-      data-testid="public_layout"
+      data-testid="homepage_layout"
       className={styles.layout__wrapper}
       style={{ background: "no-repeat 95% center/40% url(./buaquete2.png)" }}
     >
@@ -17,9 +20,7 @@ export default function Home() {
         <AppMainNav />
       </header>
 
-      <main className={styles.layout__main}>
-        <HomepageIntro />
-      </main>
+      <main className={styles.layout__main}>{children}</main>
 
       <footer className={styles.layout__footer}>
         <span>© 2024, GiftIdea. All Rights Reserved.</span>

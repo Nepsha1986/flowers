@@ -1,8 +1,18 @@
+import Link from "next/link";
+
 const AppLogo = () => {
   return (
-    <h1 style={{ margin: 0, letterSpacing: "0.15em", fontWeight: 400 }}>
+    <Link
+      href="/"
+      style={{
+        margin: 0,
+        letterSpacing: "0.15em",
+        fontWeight: 400,
+        fontSize: "1.5rem",
+      }}
+    >
       FLOWERS
-    </h1>
+    </Link>
   );
 };
 
