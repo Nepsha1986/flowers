@@ -6,10 +6,12 @@ import UserMenu from "./components/UserMenu";
 async function SignIn() {
   const session = await getSession();
 
+  console.log(session);
+
   return (
     <>
       {!!session?.user?.name ? (
-        <UserMenu userName={session?.user?.name} />
+        <UserMenu imgSrc={session?.user?.picture} />
       ) : (
         <a href="/api/auth/login">
           <UserOutlined /> Sign In

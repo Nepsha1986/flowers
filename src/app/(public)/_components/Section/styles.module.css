@@ -1,0 +1,22 @@
+.section__container {
+  max-width: 1300px;
+  height: 100%;
+  padding: 3rem 15px;
+  margin: 0 auto;
+}
+
+.section__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.section__heading {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+}
+
+.section__subheading {
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: var(--c-gray-700);
+}

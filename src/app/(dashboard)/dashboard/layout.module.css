@@ -7,7 +7,7 @@
 
 .layout__header {
   grid-area: header;
-  padding: 10px 15px;
+  padding: 1rem 2rem;
   background: var(--c-gray-100);
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
 
 .layout__main {
   grid-area: main;
-  padding: 2rem 1rem;
+  padding: 2rem;
 }
 
 .layout__sidebar {

@@ -10,7 +10,7 @@
 
 .layout__header {
   grid-area: header;
-  padding: 10px 15px;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +18,7 @@
 
 .layout__main {
   max-width: var(--app-width);
-  padding: 2rem 15px;
+  padding: 2rem;
   width: 100%;
   margin: 0 auto;
   grid-area: main;
@@ -28,7 +28,7 @@
   grid-area: footer;
   font-size: 0.9rem;
   font-weight: 300;
-  padding: 1.25rem 15px 0.75rem;
+  padding: 1.25rem 2rem 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

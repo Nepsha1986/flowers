@@ -8,8 +8,6 @@ export async function GET(request: NextRequest) {
   try {
     const [country, city] = getReqParams(request, "country", "city");
 
-    console.log(country, city);
-
     const client = await db;
     const collection = client.db("flowers_app").collection("products");
     const result = await collection

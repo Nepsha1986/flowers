@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { UserOutlined } from "@ant-design/icons";
+import Image from "next/image";
 import { Dropdown, MenuProps } from "antd";
 import { usePathname } from "next/navigation";
 
@@ -22,17 +22,27 @@ const getMenuItems = (curPath: string): MenuProps["items"] => {
 };
 
 interface Props {
-  userName: string;
+  imgSrc: string;
 }
 
-const UserMenu: React.FC<Props> = ({ userName }) => {
+const UserMenu: React.FC<Props> = ({ imgSrc }) => {
   const currentPath = usePathname();
   const items = getMenuItems(currentPath);
 
   return (
-    <Dropdown menu={{ items }} placement="bottom" trigger={["click"]}>
-      <a onClick={(e) => e.preventDefault()}>
-        <UserOutlined /> {userName}
+    <Dropdown menu={{ items }} placement="bottomRight" trigger={["click"]}>
+      <a
+        style={{
+          display: "inline-block",
+          width: "40px",
+          height: "40px",
+          borderRadius: "50%",
+          overflow: "hidden",
+          cursor: "pointer",
+        }}
+        onClick={(e) => e.preventDefault()}
+      >
+        <img style={{ width: "100%" }} src={imgSrc} alt="user" />
       </a>
     </Dropdown>
   );
