@@ -12,7 +12,10 @@ const items: MenuItem[] = [
     key: "grp",
     type: "group",
     children: [
-      { key: "13", label: <Link href="/dashboard">Dashboard</Link> },
+      {
+        key: "13",
+        label: <Link href="/dashboard/my-listings">My Listings</Link>,
+      },
       { key: "14", label: <Link href="/dashboard/products">Products</Link> },
     ],
   },

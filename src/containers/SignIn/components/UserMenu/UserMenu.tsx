@@ -9,7 +9,7 @@ const getMenuItems = (curPath: string): MenuProps["items"] => {
     {
       key: "1",
       label: !curPath.includes("/dashboard") ? (
-        <Link href="/dashboard">Dashboard</Link>
+        <Link href="/dashboard/my-listings">Dashboard</Link>
       ) : (
         <Link href="/">Homepage</Link>
       ),
