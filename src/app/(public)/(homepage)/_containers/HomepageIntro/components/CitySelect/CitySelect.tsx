@@ -24,7 +24,9 @@ const CitySelect = () => {
         }))}
       />
 
-      <Button onClick={handleClick}>Search</Button>
+      <Button type="primary" onClick={handleClick}>
+        Search
+      </Button>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "antd";
 import placeholder from "@/assets/temp/buaquete.webp";
 
 import styles from "./styles.module.css";
@@ -18,13 +19,19 @@ const SingleProduct = ({ id, name, description, price }: Props) => {
       </div>
 
       <div className={styles.singleProduct__dataWrap}>
-        <h1>{name}</h1>
-        <span>${price}</span>
-
         <div>
-          <p>{description}</p>
+          <h1>{name}</h1>
+          <span>${price}</span>
+
+          <div>
+            <p>{description}</p>
+          </div>
+          <div>Product ID: {id}</div>
         </div>
-        <span>Product ID: {id}</span>
+
+        <Button type="primary" size="large" style={{ marginTop: "2rem" }}>
+          Contact the Seller
+        </Button>
       </div>
     </div>
   );

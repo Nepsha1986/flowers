@@ -3,6 +3,8 @@ import { Lato, Dancing_Script } from "next/font/google";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 
+import ThemeProvider from "@/app/(public)/ThemeProvider";
+
 import "./globals.css";
 
 const lato = Lato({
@@ -10,6 +12,7 @@ const lato = Lato({
   variable: "--font-main",
   weight: ["300", "400", "700"],
 });
+
 const dancing_script = Dancing_Script({
   variable: "--font-alt",
   weight: ["400"],
@@ -28,11 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <UserProvider>
-        <body className={`${lato.variable} ${dancing_script.variable}`}>
-          <AntdRegistry>{children}</AntdRegistry>
-        </body>
-      </UserProvider>
+      <ThemeProvider>
+        <UserProvider>
+          <body className={`${lato.variable} ${dancing_script.variable}`}>
+            <AntdRegistry>{children}</AntdRegistry>
+          </body>
+        </UserProvider>
+      </ThemeProvider>
     </html>
   );
 }

@@ -1,16 +1,25 @@
 .singleProduct {
   display: flex;
+  gap: 15px;
   flex-flow: row wrap;
 }
 
 .singleProduct__dataWrap {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border-radius: 10px;
   flex-grow: 1;
-  flex-basis: 500px;
+  flex-basis: 320px;
+  width: 30%;
   padding: 1rem;
+  border: 1px solid var(--c-gray-200);
 }
 
 .singleProduct__imgWrap {
-  flex-grow: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-grow: 2;
+  width: 70%;
   flex-basis: 500px;
-  padding: 1rem;
 }
