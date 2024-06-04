@@ -16,7 +16,10 @@ const items: MenuItem[] = [
         key: "13",
         label: <Link href="/dashboard/my-listings">My Listings</Link>,
       },
-      { key: "14", label: <Link href="/dashboard/products">Products</Link> },
+      {
+        key: "14",
+        label: <Link href="/dashboard/my-profile">My Profile</Link>,
+      },
     ],
   },
 ];
