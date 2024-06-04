@@ -1,4 +1,4 @@
-import { ProductResDto } from "@/backend/models/productSchema";
+import { ProductResDto } from "@/backend/models/product.schema";
 import { API_URL } from "@/lib/variables";
 
 interface ProductService {

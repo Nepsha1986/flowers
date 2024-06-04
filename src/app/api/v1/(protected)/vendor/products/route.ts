@@ -2,7 +2,7 @@ import z from "zod";
 import { getSession } from "@auth0/nextjs-auth0";
 
 import db from "@/backend/db";
-import { NewProductValidationSchema } from "@/backend/models/productSchema";
+import { NewProductValidationSchema } from "@/backend/models/product.schema";
 
 export async function GET() {
   try {

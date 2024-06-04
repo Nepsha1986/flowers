@@ -1,4 +1,4 @@
-import { ProductResDto, ProductReqDto } from "@/backend/models/productSchema";
+import { ProductResDto, ProductReqDto } from "@/backend/models/product.schema";
 
 interface ProductService {
   getAll: () => Promise<ProductResDto[]>;

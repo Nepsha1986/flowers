@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Button, Form, FormProps, Input, InputNumber } from "antd";
+import { profileService } from "@/app/(dashboard)/_services/vendor/profile.service";
 
 const formItemLayout = {
   labelCol: {
@@ -22,7 +23,7 @@ type FieldType = {
 
 const CreateProfileForm: React.FC = () => {
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
-    console.log(values);
+    profileService.add(values);
   };
 
   return (
