@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Button } from "antd";
 import placeholder from "@/assets/temp/buaquete.webp";
+
+import ContactSeller from "./ContactSeller";
 
 import styles from "./styles.module.css";
 
@@ -9,9 +10,10 @@ interface Props {
   name: string;
   description: string;
   price: number;
+  vendorId: string;
 }
 
-const SingleProduct = ({ id, name, description, price }: Props) => {
+const SingleProduct = ({ id, name, description, price, vendorId }: Props) => {
   return (
     <div className={styles.singleProduct}>
       <div className={styles.singleProduct__imgWrap}>
@@ -29,9 +31,7 @@ const SingleProduct = ({ id, name, description, price }: Props) => {
           <div>Product ID: {id}</div>
         </div>
 
-        <Button type="primary" size="large" style={{ marginTop: "2rem" }}>
-          Contact the Seller
-        </Button>
+        <ContactSeller id={vendorId} />
       </div>
     </div>
   );

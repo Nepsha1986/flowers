@@ -16,6 +16,7 @@ export default async function SingleProductPage({
         name={name}
         description={description}
         price={price}
+        vendorId={vendorId}
       />
     </div>
   );

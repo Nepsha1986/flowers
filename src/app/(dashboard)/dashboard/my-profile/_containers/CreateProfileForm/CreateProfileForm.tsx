@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { Button, Form, FormProps, Input, InputNumber } from "antd";
+import { Button, Form, FormProps, Input, message } from "antd";
 import { profileService } from "@/app/(dashboard)/_services/vendor/profile.service";
+import { useMutation } from "@tanstack/react-query";
 
 const formItemLayout = {
   labelCol: {
@@ -18,54 +19,84 @@ type FieldType = {
   firstName: string;
   secondName: string;
   email: string;
-  phoneNumber: number;
+  phoneNumber: string;
 };
 
-const CreateProfileForm: React.FC = () => {
-  const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
-    profileService.add(values);
+interface Props {
+  onSuccess: () => void;
+  defaults?: FieldType;
+}
+
+const CreateProfileForm = ({ defaults, onSuccess }: Props) => {
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const { mutate } = useMutation({
+    mutationKey: ["createProfile"],
+    mutationFn: (profileData: FieldType) => {
+      return profileService.add(profileData);
+    },
+    onSuccess: () => {
+      void messageApi.success("Your profile created successfully!");
+      onSuccess();
+    },
+    onError: () => {
+      void messageApi.error("Something went wrong, please try again later!");
+    },
+  });
+
+  const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
+    mutate(values);
   };
 
   return (
-    <Form {...formItemLayout} onFinish={onFinish} style={{ maxWidth: 600 }}>
-      <Form.Item
-        label="First name"
-        name="firstName"
-        rules={[{ required: true, message: "Please input!" }]}
-      >
-        <Input />
-      </Form.Item>
+    <>
+      {contextHolder}
 
-      <Form.Item
-        label="Second name"
-        name="secondName"
-        rules={[{ required: true, message: "Please input!" }]}
+      <Form
+        {...formItemLayout}
+        initialValues={defaults}
+        onFinish={onFinish}
+        style={{ maxWidth: 600 }}
       >
-        <Input />
-      </Form.Item>
+        <Form.Item
+          label="First name"
+          name="firstName"
+          rules={[{ required: true, message: "Please input!" }]}
+        >
+          <Input />
+        </Form.Item>
 
-      <Form.Item
-        label="Email"
-        name="email"
-        rules={[{ required: true, message: "Please input!" }]}
-      >
-        <Input />
-      </Form.Item>
+        <Form.Item
+          label="Second name"
+          name="secondName"
+          rules={[{ required: true, message: "Please input!" }]}
+        >
+          <Input />
+        </Form.Item>
 
-      <Form.Item
-        label="Phone"
-        name="phoneNumber"
-        rules={[{ required: true, message: "Please input!" }]}
-      >
-        <InputNumber style={{ width: "100%" }} />
-      </Form.Item>
+        <Form.Item
+          label="Email"
+          name="email"
+          rules={[{ required: true, message: "Please input!" }]}
+        >
+          <Input disabled />
+        </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 6, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
+        <Form.Item
+          label="Phone"
+          name="phoneNumber"
+          rules={[{ required: true, message: "Please input!" }]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item wrapperCol={{ offset: 6, span: 16 }}>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
+    </>
   );
 };
 

@@ -6,6 +6,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import ThemeProvider from "@/app/(public)/ThemeProvider";
 
 import "./globals.css";
+import QueryProvider from "@/app/(public)/QueryProvider";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -33,9 +34,11 @@ export default function RootLayout({
     <html lang="en">
       <ThemeProvider>
         <UserProvider>
-          <body className={`${lato.variable} ${dancing_script.variable}`}>
-            <AntdRegistry>{children}</AntdRegistry>
-          </body>
+          <QueryProvider>
+            <body className={`${lato.variable} ${dancing_script.variable}`}>
+              <AntdRegistry>{children}</AntdRegistry>
+            </body>
+          </QueryProvider>
         </UserProvider>
       </ThemeProvider>
     </html>

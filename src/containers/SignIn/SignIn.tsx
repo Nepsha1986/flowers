@@ -6,8 +6,6 @@ import UserMenu from "./components/UserMenu";
 async function SignIn() {
   const session = await getSession();
 
-  console.log(session);
-
   return (
     <>
       {!!session?.user?.name ? (
