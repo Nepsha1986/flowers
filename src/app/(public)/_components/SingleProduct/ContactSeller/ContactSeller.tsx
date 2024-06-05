@@ -1,7 +1,7 @@
 "use client";
-
 import { Button } from "antd";
 import { useQuery } from "@tanstack/react-query";
+
 import { vendorService } from "@/app/(public)/_services/vendor.service";
 
 interface Props {
