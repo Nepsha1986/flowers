@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { forwardRef, useContext } from "react";
 import Image from "next/image";
@@ -26,7 +26,7 @@ const ProductCard = forwardRef<React.RefObject<"div">, Props>(
         data-testid="product_card"
         className={styles.productCard}
       >
-        { locale }
+        {locale}
         <div className={styles.productCard__image}>
           <Image src={img.src} alt={title} width={400} height={400} />
         </div>

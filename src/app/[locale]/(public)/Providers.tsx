@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { createContext } from "react";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
@@ -7,9 +7,15 @@ import ThemeProvider from "./_providers/ThemeProvider";
 import QueryProvider from "./_providers/QueryProvider";
 import { Locale } from "@/lib/locales";
 
-export const LocaleContext = createContext('en-us');
+export const LocaleContext = createContext("en-us");
 
-const Providers = ({ children, locale }: { children: React.ReactNode, locale: Locale }) => {
+const Providers = ({
+  children,
+  locale,
+}: {
+  children: React.ReactNode;
+  locale: Locale;
+}) => {
   return (
     <LocaleContext.Provider value={locale}>
       <AntdRegistry>

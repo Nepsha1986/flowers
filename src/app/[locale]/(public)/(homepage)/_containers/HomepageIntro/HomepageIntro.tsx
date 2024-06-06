@@ -3,12 +3,12 @@ import CitySelect from "./components/CitySelect";
 import styles from "./styles.module.css";
 
 interface Props {
-  supTitle: string,
-  title: string,
-  description: string
+  supTitle: string;
+  title: string;
+  description: string;
 }
 
-const HomepageIntro = ({ title,supTitle, description }: Props) => {
+const HomepageIntro = ({ title, supTitle, description }: Props) => {
   return (
     <div className={styles.homepageIntro}>
       <p className={styles.homepageIntro__supTitle}>{supTitle}</p>
