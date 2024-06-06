@@ -4,7 +4,7 @@ import Navigation from "@/app/(dashboard)/_containers/Navigation";
 import SignIn from "@/containers/SignIn/SignIn";
 
 import styles from "./layout.module.css";
-import AppLogo from "@/app/(public)/_components/AppLogo";
+import AppLogo from "@/app/[locale]/(public)/_components/AppLogo";
 
 async function DashboardLayout({
   children,
