@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Lato, Dancing_Script } from "next/font/google";
+import { Montserrat, Pacifico } from "next/font/google";
 
 import { type Locale, locales } from "@/lib/locales";
 import Providers from "./Providers";
 
 import "./globals.css";
 
-const lato = Lato({
-  subsets: ["latin"],
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
   variable: "--font-main",
   weight: ["300", "400", "700"],
 });
 
-const dancing_script = Dancing_Script({
+const pacifico = Pacifico({
   variable: "--font-alt",
   weight: ["400"],
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers locale={params.locale}>
-        <body className={`${lato.variable} ${dancing_script.variable}`}>
+        <body className={`${montserrat.variable} ${pacifico.variable}`}>
           {children}
         </body>
       </Providers>

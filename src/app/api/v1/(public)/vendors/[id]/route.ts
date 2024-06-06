@@ -1,6 +1,5 @@
 import db from "@/backend/db";
 import { NextRequest } from "next/server";
-import { ObjectId } from "mongodb";
 
 export async function GET(_: NextRequest, context: { params: { id: string } }) {
   try {
