@@ -1,17 +1,19 @@
-import AppLogo from "@/app/[locale]/(public)/_components/AppLogo";
-import AppMainNav from "@/app/[locale]/(public)/_components/AppMainNav";
+import AppLogo from "@/components/AppLogo";
 
 import styles from "./layout.module.css";
 import SignIn from "@/containers/SignIn";
+import { Locale } from "@/lib/locales";
 export default function PublicPageLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: Locale };
 }>) {
   return (
     <div data-testid="public_layout" className={styles.layout__wrapper}>
       <header className={styles.layout__header}>
-        <AppLogo />
+        <AppLogo href={`/${params.locale}`} />
         <SignIn />
       </header>
 

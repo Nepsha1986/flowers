@@ -1,12 +1,14 @@
 import SignIn from "@/containers/SignIn/SignIn";
-import AppLogo from "@/app/[locale]/(public)/_components/AppLogo";
+import AppLogo from "@/components/AppLogo";
 
 import styles from "./layout.module.css";
 
 export default function HomePageLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
   return (
     <div
@@ -15,7 +17,7 @@ export default function HomePageLayout({
       style={{ background: "no-repeat 95% center/40% url(./buaquete2.png)" }}
     >
       <header className={styles.layout__header}>
-        <AppLogo />
+        <AppLogo href={`/${params.locale}`} />
         <SignIn />
       </header>
 
