@@ -7,7 +7,7 @@ import ThemeProvider from "./_providers/ThemeProvider";
 import QueryProvider from "./_providers/QueryProvider";
 import { Locale } from "@/lib/locales";
 
-export const LocaleContext = createContext("en-us");
+export const LocaleContext = createContext<Locale>("en-us");
 
 const Providers = ({
   children,

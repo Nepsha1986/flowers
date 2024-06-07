@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { Montserrat, Pacifico } from "next/font/google";
 
 import { type Locale, locales } from "@/lib/locales";
@@ -30,13 +31,12 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: Locale };
 }>) {
-  if (!locales.includes(params.locale)) {
-    return <html lang="en">404 not found</html>;
-  }
+  const locale = params.locale;
+  if (!locales.includes(locale)) notFound();
 
   return (
-    <html lang="en">
-      <Providers locale={params.locale}>
+    <html lang={locale}>
+      <Providers locale={locale}>
         <body className={`${montserrat.variable} ${pacifico.variable}`}>
           {children}
         </body>

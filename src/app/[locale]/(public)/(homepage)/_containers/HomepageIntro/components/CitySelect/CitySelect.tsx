@@ -2,13 +2,14 @@
 
 import { useRouter } from "next/navigation";
 import { Button, Select } from "antd";
-import { cities } from "@/lib/cities";
+import { getCityOptions } from "@/lib/cities";
 import { useContext, useState } from "react";
 import { LocaleContext } from "@/app/[locale]/(public)/Providers";
 
 const CitySelect = () => {
   const router = useRouter();
   const locale = useContext(LocaleContext);
+  const options = getCityOptions(locale);
 
   const [val, setVal] = useState();
 
@@ -22,9 +23,9 @@ const CitySelect = () => {
         onChange={setVal}
         placeholder="Select city"
         style={{ width: "320px", marginRight: "10px" }}
-        options={cities.ua.map((i) => ({
-          value: i.toLowerCase().replace(" ", "-"),
-          label: i,
+        options={options.map(({ label, value }) => ({
+          value,
+          label,
         }))}
       />
 

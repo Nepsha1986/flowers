@@ -2,18 +2,20 @@ import { notFound } from "next/navigation";
 
 import ProductsList from "@/app/[locale]/(public)/_containers/ProductsList";
 import Section from "@/app/[locale]/(public)/_components/Section";
-import { citiesUrls } from "@/lib/cities";
+import { getCityCodes, cities } from "@/lib/cities";
+import { Locale } from "@/lib/locales";
 
-export default function Flowers(context: { params: { city: string } }) {
-  const city = context.params.city;
+export default function Flowers(context: {
+  params: { city: string; locale: Locale };
+}) {
+  const { city, locale } = context.params;
+  const cityCodes = getCityCodes(locale);
 
-  if (!citiesUrls.ua.includes(city)) {
-    notFound();
-  }
+  if (!cityCodes.includes(city)) notFound();
 
   return (
     <Section
-      heading={`Courier Delivery of Flowers in ${city}`}
+      heading={`Courier Delivery of Flowers in ${cities[locale][city]}`}
       subheading="Explore our collection of the freshest and most beautiful flowers that will enhance the important moments of
 				your life. Our team of florists is ready to craft unique bouquets delivered right to your doorstep in any corner
 				of Kyiv. Order flowers now and gift beauty and joy to your loved ones!"
