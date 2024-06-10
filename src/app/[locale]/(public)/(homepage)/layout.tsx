@@ -1,5 +1,7 @@
 import SignIn from "@/containers/SignIn/SignIn";
 import AppLogo from "@/components/AppLogo";
+import LangSwitcher from "@/app/[locale]/(public)/_components/LangSwitcher";
+import { Locale } from "@/lib/locales";
 
 import styles from "./layout.module.css";
 
@@ -8,7 +10,7 @@ export default function HomePageLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: Locale };
 }>) {
   return (
     <div
@@ -18,7 +20,11 @@ export default function HomePageLayout({
     >
       <header className={styles.layout__header}>
         <AppLogo href={`/${params.locale}`} />
-        <SignIn />
+
+        <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+          <LangSwitcher locale={params.locale} />
+          <SignIn />
+        </div>
       </header>
 
       <main className={styles.layout__main}>{children}</main>
