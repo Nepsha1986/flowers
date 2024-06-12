@@ -1,3 +1,4 @@
 const API_URL = process.env.NEXT_PUBLIC_WEBSITE_URL;
+const PUBLITIO_TOKEN = process.env.PUBLITIO_API_TOKEN;
 
-export { API_URL };
+export { API_URL, PUBLITIO_TOKEN };

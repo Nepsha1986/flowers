@@ -6,6 +6,7 @@ export const ProductModel = z.object({
   description: z.string().max(800),
   price: z.number().max(20000).min(0),
   vendorId: z.string(),
+  images: z.array(z.string()),
   location: z.object({
     country: z.string(),
     city: z.string(),

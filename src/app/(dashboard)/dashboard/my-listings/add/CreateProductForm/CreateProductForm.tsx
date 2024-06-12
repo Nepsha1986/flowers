@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, FormProps, Input, InputNumber } from "antd";
 
 import { productService } from "@/app/(dashboard)/_services/vendor/product.service";
+import ImagesUpload from "@/app/(dashboard)/dashboard/my-listings/_containers/ImagesUpload";
 
 const formItemLayout = {
   labelCol: {
@@ -24,9 +25,11 @@ type FieldType = {
 };
 
 const CreateProductForm: React.FC = () => {
+  const [images, setImages] = useState<string[]>([]);
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
     await productService.add({
       ...values,
+      images,
       location: {
         country: values.country,
         city: values.city,
@@ -36,6 +39,11 @@ const CreateProductForm: React.FC = () => {
 
   return (
     <Form {...formItemLayout} onFinish={onFinish} style={{ maxWidth: 600 }}>
+      <ImagesUpload
+        onChange={(images) => {
+          setImages(images);
+        }}
+      />
       <Form.Item
         label="Name"
         name="name"
