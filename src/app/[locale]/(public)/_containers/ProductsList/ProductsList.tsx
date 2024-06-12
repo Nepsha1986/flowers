@@ -20,6 +20,7 @@ const ProductsList = async ({ city, country }: Props) => {
             title={i.name}
             description={i.description}
             price={i.price}
+            imgSrc={i.images[0]}
           />
         </Col>
       ))}

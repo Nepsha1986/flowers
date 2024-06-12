@@ -1,5 +1,4 @@
 import Image from "next/image";
-import placeholder from "@/assets/temp/buaquete.webp";
 
 import ContactSeller from "./ContactSeller";
 
@@ -11,13 +10,21 @@ interface Props {
   description: string;
   price: number;
   vendorId: string;
+  imageUrl: string;
 }
 
-const SingleProduct = ({ id, name, description, price, vendorId }: Props) => {
+const SingleProduct = ({
+  id,
+  name,
+  description,
+  price,
+  vendorId,
+  imageUrl,
+}: Props) => {
   return (
     <div className={styles.singleProduct}>
       <div className={styles.singleProduct__imgWrap}>
-        <Image src={placeholder} width={600} height={600} alt={name} />
+        <Image src={imageUrl} width={600} height={600} alt={name} />
       </div>
 
       <div className={styles.singleProduct__dataWrap}>

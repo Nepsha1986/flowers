@@ -3,8 +3,6 @@ import { forwardRef, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import img from "@/assets/temp/buaquete.webp";
-
 import styles from "./styles.module.css";
 import { LocaleContext } from "@/app/[locale]/(public)/Providers";
 
@@ -13,10 +11,11 @@ interface Props extends React.ComponentPropsWithoutRef<"div"> {
   title: string;
   description: string;
   price: number;
+  imgSrc: string;
 }
 
 const ProductCard = forwardRef<React.RefObject<"div">, Props>(
-  ({ id, title, description, price }: Props, ref) => {
+  ({ id, title, description, price, imgSrc }: Props, ref) => {
     const locale = useContext(LocaleContext);
 
     return (
@@ -26,7 +25,7 @@ const ProductCard = forwardRef<React.RefObject<"div">, Props>(
         className={styles.productCard}
       >
         <div className={styles.productCard__image}>
-          <Image src={img.src} alt={title} width={400} height={400} />
+          <Image src={imgSrc} alt={title} width={400} height={400} />
         </div>
 
         <div className={styles.productCard__content}>
