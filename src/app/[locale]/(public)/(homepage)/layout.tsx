@@ -13,11 +13,7 @@ export default function HomePageLayout({
   params: { locale: Locale };
 }>) {
   return (
-    <div
-      data-testid="homepage_layout"
-      className={styles.layout__wrapper}
-      style={{ background: "no-repeat 95% center/40% url(./buaquete2.png)" }}
-    >
+    <div data-testid="homepage_layout" className={styles.layout__wrapper}>
       <header className={styles.layout__header}>
         <AppLogo href={`/${params.locale}`} />
 
