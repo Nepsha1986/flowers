@@ -1,7 +1,7 @@
 .productCard {
   background: #fff;
   box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
-  display: inline-block;
+  display: block;
   border-radius: 3px;
   position: relative;
   transition: 0.185s ease-in-out;
@@ -48,6 +48,7 @@
 
 .productCard__image {
   aspect-ratio: 400 / 420;
+  overflow: hidden;
 }
 
 .productCard__date {
