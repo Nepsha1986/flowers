@@ -6,6 +6,7 @@ import { type Locale, locales } from "@/lib/locales";
 import Providers from "./Providers";
 
 import "./globals.css";
+import { getDictionary } from "@/app/[locale]/(public)/_i18n/getDictionary";
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   description: "-",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
@@ -33,10 +34,11 @@ export default function RootLayout({
 }>) {
   const locale = params.locale;
   if (!locales.includes(locale)) notFound();
+  const dict = await getDictionary(locale);
 
   return (
     <html lang={locale}>
-      <Providers locale={locale}>
+      <Providers dictionary={dict} locale={locale}>
         <body className={`${montserrat.variable} ${pacifico.variable}`}>
           {children}
         </body>

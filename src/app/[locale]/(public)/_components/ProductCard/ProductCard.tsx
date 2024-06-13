@@ -3,8 +3,9 @@ import { forwardRef, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { LocaleContext } from "@/app/[locale]/(public)/_providers/LocaleProvider";
+
 import styles from "./styles.module.css";
-import { LocaleContext } from "@/app/[locale]/(public)/Providers";
 
 interface Props extends React.ComponentPropsWithoutRef<"div"> {
   id: string;
@@ -16,7 +17,7 @@ interface Props extends React.ComponentPropsWithoutRef<"div"> {
 
 const ProductCard = forwardRef<React.RefObject<"div">, Props>(
   ({ id, title, description, price, imgSrc }: Props, ref) => {
-    const locale = useContext(LocaleContext);
+    const { locale } = useContext(LocaleContext);
 
     return (
       <Link

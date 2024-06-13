@@ -1,23 +1,25 @@
 "use client";
 
-import { createContext } from "react";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+
 import ThemeProvider from "./_providers/ThemeProvider";
 import QueryProvider from "./_providers/QueryProvider";
+import LocaleProvider from "./_providers/LocaleProvider";
 import { Locale } from "@/lib/locales";
-
-export const LocaleContext = createContext<Locale>("en-us");
+import { Dictionary } from "@/app/[locale]/(public)/_i18n/types";
 
 const Providers = ({
   children,
+  dictionary,
   locale,
 }: {
   children: React.ReactNode;
+  dictionary: Dictionary;
   locale: Locale;
 }) => {
   return (
-    <LocaleContext.Provider value={locale}>
+    <LocaleProvider locale={locale} dictionary={dictionary}>
       <AntdRegistry>
         <ThemeProvider>
           <UserProvider>
@@ -25,7 +27,7 @@ const Providers = ({
           </UserProvider>
         </ThemeProvider>
       </AntdRegistry>
-    </LocaleContext.Provider>
+    </LocaleProvider>
   );
 };
 

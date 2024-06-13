@@ -1,6 +1,8 @@
 {
   "common": {
-    "search": "поиск"
+    "all_rights_reserved": "Все права защищены",
+    "search": "поиск",
+    "select_city": "Выберите город"
   },
   "components": {
     "homepage_intro": {

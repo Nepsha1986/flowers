@@ -1,6 +1,8 @@
 {
   "common": {
-    "search": "search"
+    "all_rights_reserved": "All Rights Reserved",
+    "search": "Search",
+    "select_city": "Select city"
   },
   "components": {
     "homepage_intro": {

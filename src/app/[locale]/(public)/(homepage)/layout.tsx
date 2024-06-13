@@ -4,14 +4,17 @@ import LangSwitcher from "@/app/[locale]/(public)/_components/LangSwitcher";
 import { Locale } from "@/lib/locales";
 
 import styles from "./layout.module.css";
+import { getDictionary } from "@/app/[locale]/(public)/_i18n/getDictionary";
 
-export default function HomePageLayout({
+export default async function HomePageLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: Locale };
 }>) {
+  const dict = await getDictionary(params.locale);
+
   return (
     <div data-testid="homepage_layout" className={styles.layout__wrapper}>
       <header className={styles.layout__header}>
@@ -26,7 +29,7 @@ export default function HomePageLayout({
       <main className={styles.layout__main}>{children}</main>
 
       <footer className={styles.layout__footer}>
-        <span>© 2024, GiftIdea. All Rights Reserved.</span>
+        <span>© 2024, GiftIdea. {dict.common.all_rights_reserved}.</span>
       </footer>
     </div>
   );
