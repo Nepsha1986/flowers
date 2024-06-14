@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./styles.module.css";
-import { LocaleContext } from "@/app/[locale]/(public)/Providers";
+import { useDictionary } from "@shared/i18n";
 
 interface Props extends React.ComponentPropsWithoutRef<"div"> {
   id: string;
@@ -16,7 +16,7 @@ interface Props extends React.ComponentPropsWithoutRef<"div"> {
 
 const ProductCard = forwardRef<React.RefObject<"div">, Props>(
   ({ id, title, description, price, imgSrc }: Props, ref) => {
-    const locale = useContext(LocaleContext);
+    const { locale } = useDictionary();
 
     return (
       <Link

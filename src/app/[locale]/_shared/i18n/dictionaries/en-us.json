@@ -1,0 +1,23 @@
+{
+  "common": {
+    "all_rights_reserved": "All Rights Reserved",
+    "dashboard": "Dashboard",
+    "homepage": "Homepage",
+    "logout": "Logout",
+    "search": "Search",
+    "select_city": "Select city"
+  },
+  "dashboard": {
+    "common": {
+      "my_listings": "My Listings",
+      "my_profile": "My Profile"
+    }
+  },
+  "components": {
+    "homepage_intro": {
+      "sup_title": "Send a little spring",
+      "title": "Flower Delivery",
+      "description": "Birthday, anniversary or any reason at all - Handpick flowers are always  a good idea and will make their day"
+    }
+  }
+}

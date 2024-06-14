@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 
 import ProductsList from "@/app/[locale]/(public)/_containers/ProductsList";
 import Section from "@/app/[locale]/(public)/_components/Section";
-import { getCityCodes, cities } from "@/lib/cities";
-import { Locale } from "@/lib/locales";
+import { getCityCodes, cities } from "@shared/lib/cities";
+import { Locale } from "@shared/i18n/locales";
 
 export default function Flowers(context: {
   params: { city: string; locale: Locale };

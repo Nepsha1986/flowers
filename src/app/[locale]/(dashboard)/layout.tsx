@@ -1,24 +1,15 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Montserrat, Pacifico } from "next/font/google";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
 import { type Locale, locales } from "@shared/i18n";
+import { getDictionary } from "@shared/i18n/server/getDictionary";
+
 import Providers from "./Providers";
 
 import "./globals.css";
-import { getDictionary } from "@shared/i18n/server/getDictionary";
 
-const montserrat = Montserrat({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-main",
-  weight: ["300", "400", "700"],
-});
-
-const pacifico = Pacifico({
-  variable: "--font-alt",
-  weight: ["400"],
-  subsets: ["latin", "cyrillic"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "-",
@@ -36,12 +27,12 @@ export default async function RootLayout({
   if (!locales.includes(locale)) notFound();
   const dict = await getDictionary(locale);
 
+  console.log(dict);
+
   return (
-    <html lang={locale}>
+    <html lang="en">
       <Providers dictionary={dict} locale={locale}>
-        <body className={`${montserrat.variable} ${pacifico.variable}`}>
-          {children}
-        </body>
+        <body className={inter.className}>{children}</body>
       </Providers>
     </html>
   );

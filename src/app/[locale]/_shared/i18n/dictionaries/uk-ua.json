@@ -1,0 +1,23 @@
+{
+  "common": {
+    "all_rights_reserved": "Всі права захищені",
+    "dashboard": "Панель керування",
+    "homepage": "Домашня сторінка",
+    "logout": "Вийти",
+    "search": "Пошук",
+    "select_city": "Виберіть місто"
+  },
+  "dashboard": {
+    "common": {
+      "my_listings": "Мої оголошення",
+      "my_profile": "Мій профіль"
+    }
+  },
+  "components": {
+    "homepage_intro": {
+      "sup_title": "Подаруйте трохи весни",
+      "title": "Доставка квітів",
+      "description": "День народження, річниця або просто так - квіти завжди гарна ідея і зроблять їх день"
+    }
+  }
+}

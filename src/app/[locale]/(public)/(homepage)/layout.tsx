@@ -1,11 +1,12 @@
-import SignIn from "@/containers/SignIn/SignIn";
-import AppLogo from "@/components/AppLogo";
-import LangSwitcher from "@/app/[locale]/(public)/_components/LangSwitcher";
-import { Locale } from "@/lib/locales";
+import { Locale } from "@shared/i18n";
+import SignIn from "@shared/containers/SignIn/SignIn";
+import AppLogo from "@shared/components/AppLogo";
+import LangSwitcher from "@public/_components/LangSwitcher";
+import AppFooter from "@public/_components/AppFooter";
 
 import styles from "./layout.module.css";
 
-export default function HomePageLayout({
+export default async function HomePageLayout({
   children,
   params,
 }: Readonly<{
@@ -26,7 +27,7 @@ export default function HomePageLayout({
       <main className={styles.layout__main}>{children}</main>
 
       <footer className={styles.layout__footer}>
-        <span>© 2024, GiftIdea. All Rights Reserved.</span>
+        <AppFooter />
       </footer>
     </div>
   );

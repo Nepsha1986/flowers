@@ -1,0 +1,90 @@
+import { Locale } from "@shared/i18n/locales";
+
+export const cities: Record<Locale, Record<string, string>> = {
+  "ru-ua": {
+    kyiv: "Киев",
+    kharkiv: "Харьков",
+    odesa: "Одесса",
+    dnipro: "Днепр",
+    donetsk: "Донецк",
+    zaporizhzhia: "Запорожье",
+    lviv: "Львов",
+    "kryvyi-rih": "Кривой Рог",
+    mykolaiv: "Николаев",
+    vinnytsia: "Винница",
+    kherson: "Херсон",
+    poltava: "Полтава",
+    chernihiv: "Чернигов",
+    cherkasy: "Черкассы",
+    zhytomyr: "Житомир",
+    sumy: "Сумы",
+    rivne: "Ровно",
+    ternopil: "Тернополь",
+    lutsk: "Луцк",
+    "ivano-frankivsk": "Ивано-Франковск",
+    kamianske: "Каменское",
+    kropyvnytskyi: "Кропивницкий",
+    khmelnytskyi: "Хмельницкий",
+    chernivtsi: "Черновцы",
+    "bila-tserkva": "Белая Церковь",
+    kremenchuk: "Кременчуг",
+    kramatorsk: "Краматорск",
+    melitopol: "Мелитополь",
+    nikopol: "Никополь",
+    uzhhorod: "Ужгород",
+    berdiansk: "Бердянск",
+    brovary: "Бровары",
+    slavutych: "Славутич",
+  },
+  "uk-ua": {
+    kyiv: "Київ",
+    kharkiv: "Харків",
+    odesa: "Одеса",
+    dnipro: "Дніпро",
+    donetsk: "Донецьк",
+    zaporizhzhia: "Запоріжжя",
+    lviv: "Львів",
+    "kryvyi-rih": "Кривий Ріг",
+    mykolaiv: "Миколаїв",
+    vinnytsia: "Вінниця",
+    kherson: "Херсон",
+    poltava: "Полтава",
+    chernihiv: "Чернігів",
+    cherkasy: "Черкаси",
+    zhytomyr: "Житомир",
+    sumy: "Суми",
+    rivne: "Рівне",
+    ternopil: "Тернопіль",
+    lutsk: "Луцьк",
+    "ivano-frankivsk": "Івано-Франківськ",
+    kamianske: "Кам’янське",
+    kropyvnytskyi: "Кропивницький",
+    khmelnytskyi: "Хмельницький",
+    chernivtsi: "Чернівці",
+    "bila-tserkva": "Біла Церква",
+    kremenchuk: "Кременчук",
+    kramatorsk: "Краматорськ",
+    melitopol: "Мелітополь",
+    nikopol: "Нікополь",
+    uzhhorod: "Ужгород",
+    berdiansk: "Бердянськ",
+    brovary: "Бровари",
+    slavutych: "Славутич",
+  },
+  "en-us": {
+    "new-york": "New York",
+  },
+} as const;
+
+export const getCityCodes = (locale: Locale): string[] =>
+  Object.keys(cities[locale]);
+export const getCityOptions = (
+  locale: Locale,
+): {
+  label: string;
+  value: string;
+}[] =>
+  Object.keys(cities[locale]).map((key) => ({
+    label: cities[locale][key],
+    value: key,
+  }));

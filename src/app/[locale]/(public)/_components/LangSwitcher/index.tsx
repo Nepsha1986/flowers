@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Icon, { GlobalOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
-import { Locale } from "@/lib/locales";
+import { Locale } from "@shared/i18n/locales";
 
 import styles from "./styles.module.css";
 

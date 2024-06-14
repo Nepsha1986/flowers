@@ -1,5 +1,5 @@
 import { ProductResDto } from "@/backend/models/product.schema";
-import { API_URL } from "@/lib/variables";
+import { API_URL } from "@shared/lib/variables";
 
 interface ProductService {
   getAll: (params: {

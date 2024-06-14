@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-size: 45dvw;
   background-position: 90% 40%;
-  background-image: url("/buaquete2.png");
+  background-image: url("/roses.png");
   grid-template:
     "header header" auto
     "main main" 1fr
