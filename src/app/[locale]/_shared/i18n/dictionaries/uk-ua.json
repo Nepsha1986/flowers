@@ -7,6 +7,14 @@
     "search": "Пошук",
     "select_city": "Виберіть місто"
   },
+  "dashboard": {
+    "containers": {
+      "navigation": {
+        "my_listings": "Мої оголошення",
+        "my_profile": "Мій профіль"
+      }
+    }
+  },
   "components": {
     "homepage_intro": {
       "sup_title": "Подаруйте трохи весни",

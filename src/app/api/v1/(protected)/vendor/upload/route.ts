@@ -1,6 +1,6 @@
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
-import { PUBLITIO_TOKEN } from "@/lib/variables";
+import { PUBLITIO_TOKEN } from "@shared/lib/variables";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   const data = await req.formData();

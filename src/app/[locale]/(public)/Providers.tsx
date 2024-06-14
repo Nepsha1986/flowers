@@ -5,9 +5,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 import ThemeProvider from "./_providers/ThemeProvider";
 import QueryProvider from "./_providers/QueryProvider";
-import LocaleProvider from "../_providers/LocaleProvider";
-import { Locale } from "@/lib/locales";
-import { Dictionary } from "@/app/[locale]/(public)/_i18n/types";
+import { LocaleProvider, type Dictionary, type Locale } from "@shared/i18n";
 
 const Providers = ({
   children,

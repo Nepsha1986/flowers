@@ -1,10 +1,11 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Providers from "./Providers";
 
-import { Locale, locales } from "@/lib/locales";
-import { notFound } from "next/navigation";
-import { getDictionary } from "@/app/[locale]/(public)/_i18n/getDictionary";
+import { type Locale, locales } from "@shared/i18n";
+import { getDictionary } from "@shared/i18n/server/getDictionary";
+
+import Providers from "./Providers";
 
 import "./globals.css";
 

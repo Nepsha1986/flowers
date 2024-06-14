@@ -7,6 +7,14 @@
     "search": "Search",
     "select_city": "Select city"
   },
+  "dashboard": {
+    "containers": {
+      "navigation": {
+        "my_listings": "My Listings",
+        "my_profile": "My Profile"
+      }
+    }
+  },
   "components": {
     "homepage_intro": {
       "sup_title": "Send a little spring",

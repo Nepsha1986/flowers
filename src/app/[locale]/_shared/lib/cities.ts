@@ -1,4 +1,4 @@
-import { Locale } from "@/lib/locales";
+import { Locale } from "@shared/i18n/locales";
 
 export const cities: Record<Locale, Record<string, string>> = {
   "ru-ua": {

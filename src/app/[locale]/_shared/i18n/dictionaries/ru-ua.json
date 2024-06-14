@@ -7,6 +7,14 @@
     "search": "Поиск",
     "select_city": "Выберите город"
   },
+  "dashboard": {
+    "containers": {
+      "navigation": {
+        "my_listings": "Мои объявления",
+        "my_profile": "Мой профайл"
+      }
+    }
+  },
   "components": {
     "homepage_intro": {
       "sup_title": "Подарите немного весны",

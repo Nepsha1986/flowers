@@ -1,6 +1,6 @@
 import HomepageIntro from "./_containers/HomepageIntro";
-import { getDictionary } from "@/app/[locale]/(public)/_i18n/getDictionary";
-import { Locale } from "@/lib/locales";
+import { Locale } from "@shared/i18n";
+import { getDictionary } from "@shared/i18n/server";
 
 export default async function Home({
   params: { locale },

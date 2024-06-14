@@ -1,7 +1,7 @@
-import React, { createContext, useContext } from "react";
+"use client";
+import React, { createContext } from "react";
 
-import { Locale } from "@/lib/locales";
-import { Dictionary } from "@/app/[locale]/(public)/_i18n/types";
+import { type Dictionary, type Locale } from "./types";
 
 interface ILocaleContext {
   locale: Locale;
@@ -30,15 +30,6 @@ const LocaleProvider = ({
       {children}
     </LocaleContext.Provider>
   );
-};
-
-export const useDictionary = () => {
-  const { dictionary, locale } = useContext(LocaleContext);
-
-  return {
-    dictionary,
-    locale,
-  };
 };
 
 export default LocaleProvider;

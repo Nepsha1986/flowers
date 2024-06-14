@@ -4,8 +4,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, Select } from "antd";
 
-import { getCityOptions } from "@/lib/cities";
-import { useDictionary } from "@/app/[locale]/_providers/LocaleProvider";
+import { getCityOptions } from "@shared/lib/cities";
+import { useDictionary } from "@shared/i18n";
 
 const CitySelect = () => {
   const { locale, dictionary } = useDictionary();

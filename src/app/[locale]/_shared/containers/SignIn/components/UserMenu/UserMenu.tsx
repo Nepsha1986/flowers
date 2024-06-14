@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Dropdown, MenuProps } from "antd";
 import { usePathname } from "next/navigation";
-import { useDictionary } from "@/app/[locale]/_providers/LocaleProvider";
+import { useDictionary } from "@shared/i18n";
 
 interface Props {
   imgSrc: string;

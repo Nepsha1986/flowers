@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./styles.module.css";
-import { useDictionary } from "@/app/[locale]/_providers/LocaleProvider";
+import { useDictionary } from "@shared/i18n";
 
 interface Props extends React.ComponentPropsWithoutRef<"div"> {
   id: string;

@@ -1,8 +1,8 @@
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 import Navigation from "@/app/[locale]/(dashboard)/_containers/Navigation";
-import SignIn from "@/containers/SignIn/SignIn";
-import AppLogo from "@/components/AppLogo";
+import SignIn from "@shared/containers/SignIn/SignIn";
+import AppLogo from "@shared/components/AppLogo";
 
 import styles from "./layout.module.css";
 

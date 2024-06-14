@@ -1,9 +1,11 @@
-import AppLogo from "@/components/AppLogo";
+import { Locale } from "@shared/i18n/locales";
+
+import SignIn from "@shared/containers/SignIn";
+import AppLogo from "@shared/components/AppLogo";
+import AppFooter from "@public/_components/AppFooter";
+import LangSwitcher from "@public/_components/LangSwitcher";
 
 import styles from "./layout.module.css";
-import SignIn from "@/containers/SignIn";
-import { Locale } from "@/lib/locales";
-import LangSwitcher from "@/app/[locale]/(public)/_components/LangSwitcher";
 export default function PublicPageLayout({
   children,
   params,
@@ -25,7 +27,7 @@ export default function PublicPageLayout({
       <main className={styles.layout__main}>{children}</main>
 
       <footer className={styles.layout__footer}>
-        <span>© 2024, GiftIdea. All Rights Reserved.</span>
+        <AppFooter />
       </footer>
     </div>
   );

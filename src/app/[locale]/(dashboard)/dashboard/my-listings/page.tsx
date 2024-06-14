@@ -3,7 +3,7 @@ import { PlusOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
 import ProductsList from "./_containers/ProductsList";
-import { Locale } from "@/lib/locales";
+import { Locale } from "@shared/i18n/locales";
 
 export default function MyListings({ params }: { params: { locale: Locale } }) {
   return (

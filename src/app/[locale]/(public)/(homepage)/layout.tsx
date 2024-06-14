@@ -1,10 +1,10 @@
-import SignIn from "@/containers/SignIn/SignIn";
-import AppLogo from "@/components/AppLogo";
-import LangSwitcher from "@/app/[locale]/(public)/_components/LangSwitcher";
-import { Locale } from "@/lib/locales";
+import { Locale } from "@shared/i18n";
+import SignIn from "@shared/containers/SignIn/SignIn";
+import AppLogo from "@shared/components/AppLogo";
+import LangSwitcher from "@public/_components/LangSwitcher";
+import AppFooter from "@public/_components/AppFooter";
 
 import styles from "./layout.module.css";
-import { getDictionary } from "@/app/[locale]/(public)/_i18n/getDictionary";
 
 export default async function HomePageLayout({
   children,
@@ -13,8 +13,6 @@ export default async function HomePageLayout({
   children: React.ReactNode;
   params: { locale: Locale };
 }>) {
-  const dict = await getDictionary(params.locale);
-
   return (
     <div data-testid="homepage_layout" className={styles.layout__wrapper}>
       <header className={styles.layout__header}>
@@ -29,7 +27,7 @@ export default async function HomePageLayout({
       <main className={styles.layout__main}>{children}</main>
 
       <footer className={styles.layout__footer}>
-        <span>© 2024, GiftIdea. {dict.common.all_rights_reserved}.</span>
+        <AppFooter />
       </footer>
     </div>
   );

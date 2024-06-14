@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Montserrat, Pacifico } from "next/font/google";
 
-import { type Locale, locales } from "@/lib/locales";
+import { type Locale, locales } from "@shared/i18n";
 import Providers from "./Providers";
 
 import "./globals.css";
-import { getDictionary } from "@/app/[locale]/(public)/_i18n/getDictionary";
+import { getDictionary } from "@shared/i18n/server/getDictionary";
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],

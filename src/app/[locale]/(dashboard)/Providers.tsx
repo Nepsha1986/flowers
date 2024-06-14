@@ -4,9 +4,8 @@ import React from "react";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import LocaleProvider from "@/app/[locale]/_providers/LocaleProvider";
-import { Locale } from "@/lib/locales";
-import { Dictionary } from "@/app/[locale]/(public)/_i18n/types";
+
+import { LocaleProvider, type Locale, type Dictionary } from "@shared/i18n";
 
 const queryClient = new QueryClient();
 
