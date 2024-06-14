@@ -1,48 +1,24 @@
-"use client";
-import { useQuery } from "@tanstack/react-query";
-import { useUser } from "@auth0/nextjs-auth0/client";
-import { Spin } from "antd";
 import Title from "antd/lib/typography/Title";
+import { getDictionary } from "@shared/i18n/server";
+import CreateProfile from "@dashboard/dashboard/my-profile/_containers/CreateProfile";
+import { Locale } from "@shared/i18n";
 
-import {
-  ProfileResDto,
-  profileService,
-} from "@dashboard/_services/vendor/profile.service";
-import CreateProfileForm from "./_containers/CreateProfileForm";
-import { useDictionary } from "@shared/i18n";
-
-export default function Profile() {
-  const { user } = useUser();
+export default async function Profile({
+  params: { locale },
+}: {
+  params: { locale: Locale };
+}) {
   const {
-    dictionary: {
-      dashboard: { common: dict },
+    dashboard: {
+      common: { my_profile },
     },
-  } = useDictionary();
-
-  const {
-    data: profile,
-    isLoading,
-    refetch,
-  } = useQuery<ProfileResDto>({
-    queryKey: ["getProfile"],
-    queryFn: profileService.get,
-  });
-
-  if (isLoading) return <Spin />;
+  } = await getDictionary(locale);
 
   return (
     <div data-testid="my_profile_page">
-      <Title>{dict.my_profile}</Title>
+      <Title>{my_profile}</Title>
 
-      <CreateProfileForm
-        defaults={{
-          firstName: profile?.firstName || user?.name || "",
-          secondName: profile?.secondName || "",
-          email: profile?.email || user?.email || "",
-          phoneNumber: profile?.phoneNumber || "",
-        }}
-        onSuccess={refetch}
-      />
+      <CreateProfile />
     </div>
   );
 }

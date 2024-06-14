@@ -2,10 +2,15 @@
   "common": {
     "all_rights_reserved": "Всі права захищені",
     "dashboard": "Панель керування",
+    "email": "Електронна пошта",
+    "first_name": "Ім'я",
     "homepage": "Домашня сторінка",
     "logout": "Вийти",
+    "phone": "Телефон",
     "search": "Пошук",
-    "select_city": "Виберіть місто"
+    "second_name": "Прізвище",
+    "select_city": "Виберіть місто",
+    "submit": "Відправити"
   },
   "dashboard": {
     "common": {

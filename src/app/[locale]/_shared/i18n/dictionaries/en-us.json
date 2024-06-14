@@ -2,10 +2,15 @@
   "common": {
     "all_rights_reserved": "All Rights Reserved",
     "dashboard": "Dashboard",
+    "email": "Email",
+    "first_name": "First name",
     "homepage": "Homepage",
     "logout": "Logout",
+    "phone": "Phone",
     "search": "Search",
-    "select_city": "Select city"
+    "second_name": "Second name",
+    "select_city": "Select city",
+    "submit": "Submit"
   },
   "dashboard": {
     "common": {

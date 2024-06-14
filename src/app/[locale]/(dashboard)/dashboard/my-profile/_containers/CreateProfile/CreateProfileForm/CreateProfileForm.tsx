@@ -1,8 +1,8 @@
-"use client";
 import React from "react";
 import { Button, Form, FormProps, Input, message } from "antd";
 import { profileService } from "@dashboard/_services/vendor/profile.service";
 import { useMutation } from "@tanstack/react-query";
+import { useDictionary } from "@shared/i18n";
 
 const formItemLayout = {
   labelCol: {
@@ -29,6 +29,8 @@ interface Props {
 
 const CreateProfileForm = ({ defaults, onSuccess }: Props) => {
   const [messageApi, contextHolder] = message.useMessage();
+  const { dictionary } = useDictionary();
+  const dict = dictionary.common;
 
   const { mutate } = useMutation({
     mutationKey: ["createProfile"],
@@ -59,7 +61,7 @@ const CreateProfileForm = ({ defaults, onSuccess }: Props) => {
         style={{ maxWidth: 600 }}
       >
         <Form.Item
-          label="First name"
+          label={dict.first_name}
           name="firstName"
           rules={[{ required: true, message: "Please input!" }]}
         >
@@ -67,7 +69,7 @@ const CreateProfileForm = ({ defaults, onSuccess }: Props) => {
         </Form.Item>
 
         <Form.Item
-          label="Second name"
+          label={dict.second_name}
           name="secondName"
           rules={[{ required: true, message: "Please input!" }]}
         >
@@ -75,7 +77,7 @@ const CreateProfileForm = ({ defaults, onSuccess }: Props) => {
         </Form.Item>
 
         <Form.Item
-          label="Email"
+          label={dict.email}
           name="email"
           rules={[{ required: true, message: "Please input!" }]}
         >
@@ -83,7 +85,7 @@ const CreateProfileForm = ({ defaults, onSuccess }: Props) => {
         </Form.Item>
 
         <Form.Item
-          label="Phone"
+          label={dict.phone}
           name="phoneNumber"
           rules={[{ required: true, message: "Please input!" }]}
         >
@@ -92,7 +94,7 @@ const CreateProfileForm = ({ defaults, onSuccess }: Props) => {
 
         <Form.Item wrapperCol={{ offset: 6, span: 16 }}>
           <Button type="primary" htmlType="submit">
-            Submit
+            {dict.submit}
           </Button>
         </Form.Item>
       </Form>

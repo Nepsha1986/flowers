@@ -2,10 +2,15 @@
   "common": {
     "all_rights_reserved": "Все права защищены",
     "dashboard": "Панель управления",
+    "email": "Электронная почта",
+    "first_name": "Имя",
     "homepage": "Домашняя страница",
     "logout": "Выйти",
+    "phone": "Телефон",
     "search": "Поиск",
-    "select_city": "Выберите город"
+    "second_name": "Фамилия",
+    "select_city": "Выберите город",
+    "submit": "Отправить"
   },
   "dashboard": {
     "common": {
