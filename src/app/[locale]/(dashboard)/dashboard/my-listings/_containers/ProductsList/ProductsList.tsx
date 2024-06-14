@@ -5,7 +5,7 @@ import { List } from "antd";
 import {
   ProductResDto,
   productService,
-} from "@/app/(dashboard)/_services/vendor/product.service";
+} from "@/app/[locale]/(dashboard)/_services/vendor/product.service";
 
 const ProductsList = () => {
   const [products, setProducts] = useState<ProductResDto[]>([]);

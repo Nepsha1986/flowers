@@ -1,14 +1,16 @@
-import ProductsList from "./_containers/ProductsList";
 import { FloatButton } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
-export default function MyListings() {
+import ProductsList from "./_containers/ProductsList";
+import { Locale } from "@/lib/locales";
+
+export default function MyListings({ params }: { params: { locale: Locale } }) {
   return (
     <div>
       <h1>My Listings</h1>
       <ProductsList />
-      <Link href={"/dashboard/my-listings/add"}>
+      <Link href={`/${params.locale}/dashboard/my-listings/add`}>
         <FloatButton
           shape="square"
           type="primary"

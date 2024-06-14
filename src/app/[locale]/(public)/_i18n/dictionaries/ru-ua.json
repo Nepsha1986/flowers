@@ -1,7 +1,10 @@
 {
   "common": {
     "all_rights_reserved": "Все права защищены",
-    "search": "поиск",
+    "dashboard": "Панель управления",
+    "homepage": "Домашняя страница",
+    "logout": "Выйти",
+    "search": "Поиск",
     "select_city": "Выберите город"
   },
   "components": {

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Button, Form, FormProps, Input, message } from "antd";
-import { profileService } from "@/app/(dashboard)/_services/vendor/profile.service";
+import { profileService } from "@dashboard/_services/vendor/profile.service";
 import { useMutation } from "@tanstack/react-query";
 
 const formItemLayout = {

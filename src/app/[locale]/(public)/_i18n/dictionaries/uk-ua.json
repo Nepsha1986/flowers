@@ -1,7 +1,10 @@
 {
   "common": {
     "all_rights_reserved": "Всі права захищені",
-    "search": "пошук",
+    "dashboard": "Панель керування",
+    "homepage": "Домашня сторінка",
+    "logout": "Вийти",
+    "search": "Пошук",
     "select_city": "Виберіть місто"
   },
   "components": {

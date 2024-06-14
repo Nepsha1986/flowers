@@ -1,6 +1,9 @@
 {
   "common": {
     "all_rights_reserved": "All Rights Reserved",
+    "dashboard": "Dashboard",
+    "homepage": "Homepage",
+    "logout": "Logout",
     "search": "Search",
     "select_city": "Select city"
   },

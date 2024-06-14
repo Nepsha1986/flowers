@@ -1,13 +1,13 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
+import { useUser } from "@auth0/nextjs-auth0/client";
 import { Spin } from "antd";
 
 import {
   ProfileResDto,
   profileService,
-} from "@/app/(dashboard)/_services/vendor/profile.service";
-import CreateProfileForm from "@/app/(dashboard)/dashboard/my-profile/_containers/CreateProfileForm";
-import { useUser } from "@auth0/nextjs-auth0/client";
+} from "@dashboard/_services/vendor/profile.service";
+import CreateProfileForm from "./_containers/CreateProfileForm";
 
 export default function Profile() {
   const { user } = useUser();

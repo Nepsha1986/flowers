@@ -1,14 +1,14 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, Select } from "antd";
 
 import { getCityOptions } from "@/lib/cities";
-import { LocaleContext } from "@/app/[locale]/(public)/_providers/LocaleProvider";
+import { useDictionary } from "@/app/[locale]/_providers/LocaleProvider";
 
 const CitySelect = () => {
-  const { locale, dictionary } = useContext(LocaleContext);
+  const { locale, dictionary } = useDictionary();
   const router = useRouter();
   const options = getCityOptions(locale);
 

@@ -3,30 +3,35 @@ import Link from "next/link";
 import Image from "next/image";
 import { Dropdown, MenuProps } from "antd";
 import { usePathname } from "next/navigation";
-
-const getMenuItems = (curPath: string): MenuProps["items"] => {
-  return [
-    {
-      key: "1",
-      label: !curPath.includes("/dashboard") ? (
-        <Link href="/dashboard/my-listings">Dashboard</Link>
-      ) : (
-        <Link href="/">Homepage</Link>
-      ),
-    },
-    {
-      key: "2",
-      label: <a href="/api/auth/logout">Logout</a>,
-    },
-  ];
-};
+import { useDictionary } from "@/app/[locale]/_providers/LocaleProvider";
 
 interface Props {
   imgSrc: string;
 }
 
 const UserMenu: React.FC<Props> = ({ imgSrc }) => {
+  const { dictionary, locale } = useDictionary();
   const currentPath = usePathname();
+
+  const getMenuItems = (curPath: string): MenuProps["items"] => {
+    return [
+      {
+        key: "1",
+        label: !curPath.includes("/dashboard") ? (
+          <Link href={`/${locale}/dashboard/my-listings`}>
+            {dictionary.common.dashboard}
+          </Link>
+        ) : (
+          <Link href={`/${locale}`}>{dictionary.common.homepage}</Link>
+        ),
+      },
+      {
+        key: "2",
+        label: <a href="/api/auth/logout">{dictionary.common.logout}</a>,
+      },
+    ];
+  };
+
   const items = getMenuItems(currentPath);
 
   return (

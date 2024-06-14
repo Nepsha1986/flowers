@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { Button, Form, FormProps, Input, InputNumber } from "antd";
 
-import { productService } from "@/app/(dashboard)/_services/vendor/product.service";
-import ImagesUpload from "@/app/(dashboard)/dashboard/my-listings/_containers/ImagesUpload";
+import { productService } from "@dashboard/_services/vendor/product.service";
+import ImagesUpload from "../../_containers/ImagesUpload";
 
 const formItemLayout = {
   labelCol: {
