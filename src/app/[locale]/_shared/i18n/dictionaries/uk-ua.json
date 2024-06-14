@@ -8,11 +8,9 @@
     "select_city": "Виберіть місто"
   },
   "dashboard": {
-    "containers": {
-      "navigation": {
-        "my_listings": "Мої оголошення",
-        "my_profile": "Мій профіль"
-      }
+    "common": {
+      "my_listings": "Мої оголошення",
+      "my_profile": "Мій профіль"
     }
   },
   "components": {

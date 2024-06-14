@@ -8,11 +8,9 @@
     "select_city": "Выберите город"
   },
   "dashboard": {
-    "containers": {
-      "navigation": {
-        "my_listings": "Мои объявления",
-        "my_profile": "Мой профайл"
-      }
+    "common": {
+      "my_listings": "Мои объявления",
+      "my_profile": "Мой профайл"
     }
   },
   "components": {

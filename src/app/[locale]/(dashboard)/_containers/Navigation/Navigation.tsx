@@ -11,7 +11,7 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const Navigation: React.FC = () => {
   const { locale, dictionary } = useDictionary();
-  const dict = dictionary.dashboard.containers.navigation;
+  const dict = dictionary.dashboard.common;
 
   const items: MenuItem[] = [
     {

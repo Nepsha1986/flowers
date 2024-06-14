@@ -8,11 +8,9 @@
     "select_city": "Select city"
   },
   "dashboard": {
-    "containers": {
-      "navigation": {
-        "my_listings": "My Listings",
-        "my_profile": "My Profile"
-      }
+    "common": {
+      "my_listings": "My Listings",
+      "my_profile": "My Profile"
     }
   },
   "components": {
