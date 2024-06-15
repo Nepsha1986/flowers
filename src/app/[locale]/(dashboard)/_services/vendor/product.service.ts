@@ -1,3 +1,4 @@
+import axios from "axios";
 import { ProductResDto, ProductReqDto } from "@/backend/models/product.schema";
 
 interface ProductService {
@@ -5,13 +6,14 @@ interface ProductService {
   add: (product: ProductReqDto) => Promise<Response>;
 }
 const productService: ProductService = {
-  getAll: async () =>
-    await fetch("/api/v1/vendor/products").then((data) => data.json()),
-  add: async (product) =>
-    await fetch("/api/v1/vendor/products", {
-      method: "post",
-      body: JSON.stringify(product),
-    }),
+  getAll: async () => {
+    const { data } = await axios.get("/api/v1/vendor/products");
+    return data;
+  },
+  add: async (product) => {
+    const { data } = await axios.post("/api/v1/vendor/products", product);
+    return data;
+  },
 };
 
 export { productService, type ProductResDto, type ProductReqDto };
