@@ -1,19 +1,26 @@
 {
   "common": {
     "all_rights_reserved": "All Rights Reserved",
+    "city": "City",
+    "country": "Country",
     "dashboard": "Dashboard",
+    "description": "description",
     "email": "Email",
     "first_name": "First name",
     "homepage": "Homepage",
     "logout": "Logout",
+    "name": "name",
     "phone": "Phone",
+    "price": "Price",
     "search": "Search",
     "second_name": "Second name",
     "select_city": "Select city",
-    "submit": "Submit"
+    "submit": "Submit",
+    "upload": "Upload"
   },
   "dashboard": {
     "common": {
+      "create_a_new_listing": "Create a New Listing",
       "my_listings": "My Listings",
       "my_profile": "My Profile"
     }

@@ -1,19 +1,26 @@
 {
   "common": {
     "all_rights_reserved": "Все права защищены",
+    "city": "Город",
+    "country": "Страна",
     "dashboard": "Панель управления",
+    "description": "Описание",
     "email": "Электронная почта",
     "first_name": "Имя",
     "homepage": "Домашняя страница",
     "logout": "Выйти",
+    "name": "Имя",
     "phone": "Телефон",
+    "price": "Цена",
     "search": "Поиск",
     "second_name": "Фамилия",
     "select_city": "Выберите город",
-    "submit": "Отправить"
+    "submit": "Отправить",
+    "upload": "Загрузить"
   },
   "dashboard": {
     "common": {
+      "create_a_new_listing": "Создать новое объявление",
       "my_listings": "Мои объявления",
       "my_profile": "Мой профайл"
     }
