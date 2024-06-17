@@ -25,6 +25,12 @@
       "my_profile": "My Profile"
     }
   },
+  "pages": {
+    "city": {
+      "heading": "Courier Delivery of Flowers in ${1}",
+      "sub_heading": "Explore our collection of the freshest and most beautiful flowers that will enhance the important moments of your life. Our team of florists is ready to craft unique bouquets delivered right to your doorstep in any corner of ${1}. Order flowers now and gift beauty and joy to your loved ones!"
+    }
+  },
   "components": {
     "homepage_intro": {
       "sup_title": "Send a little spring",
