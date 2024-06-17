@@ -4,6 +4,7 @@ import { Button, Form, FormProps, Input, InputNumber } from "antd";
 
 import { productService } from "@dashboard/_services/vendor/product.service";
 import ImagesUpload from "../../_containers/ImagesUpload";
+import { useDictionary } from "@shared/i18n";
 
 const formItemLayout = {
   labelCol: {
@@ -25,6 +26,8 @@ type FieldType = {
 };
 
 const CreateProductForm: React.FC = () => {
+  const { dictionary } = useDictionary();
+  const dict = dictionary.common;
   const [images, setImages] = useState<string[]>([]);
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
     await productService.add({
@@ -45,7 +48,7 @@ const CreateProductForm: React.FC = () => {
         }}
       />
       <Form.Item
-        label="Name"
+        label={dict.name}
         name="name"
         rules={[{ required: true, message: "Please input!" }]}
       >
@@ -53,7 +56,7 @@ const CreateProductForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item
-        label="Description"
+        label={dict.description}
         name="description"
         rules={[{ required: true, message: "Please input!" }]}
       >
@@ -61,7 +64,7 @@ const CreateProductForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item
-        label="Country"
+        label={dict.country}
         name="country"
         initialValue="Ukraine"
         rules={[{ required: true, message: "Please input!" }]}
@@ -70,7 +73,7 @@ const CreateProductForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item
-        label="City"
+        label={dict.city}
         name="city"
         rules={[{ required: true, message: "Please input!" }]}
       >
@@ -78,7 +81,7 @@ const CreateProductForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item
-        label="Price"
+        label={dict.price}
         name="price"
         rules={[{ required: true, message: "Please input!" }]}
       >
@@ -87,7 +90,7 @@ const CreateProductForm: React.FC = () => {
 
       <Form.Item wrapperCol={{ offset: 6, span: 16 }}>
         <Button type="primary" htmlType="submit">
-          Submit
+          {dict.submit}
         </Button>
       </Form.Item>
     </Form>

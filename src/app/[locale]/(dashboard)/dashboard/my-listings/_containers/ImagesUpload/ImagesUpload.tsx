@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import { Upload } from "antd";
-import type { GetProp, UploadFile, UploadProps } from "antd";
+import type { UploadFile, UploadProps } from "antd";
+import { useDictionary } from "@shared/i18n";
 
-type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
-
-const UPLOAD_MAX_COUNT = 4;
+const UPLOAD_MAX_COUNT: number = 4;
 
 interface Props {
   onChange?: (urls: string[]) => void;
@@ -13,11 +12,10 @@ interface Props {
 
 const ImagesUpload: React.FC<Props> = ({ onChange }) => {
   const [fileList, setFileList] = useState<UploadFile[]>([]);
+  const { dictionary } = useDictionary();
+  const dict = dictionary.common;
 
-  const handleChange: UploadProps["onChange"] = ({
-    fileList: newFileList,
-    file,
-  }) => {
+  const handleChange: UploadProps["onChange"] = ({ fileList: newFileList }) => {
     setFileList(newFileList);
 
     const urls = newFileList
@@ -30,21 +28,19 @@ const ImagesUpload: React.FC<Props> = ({ onChange }) => {
   const uploadButton = (
     <button style={{ border: 0, background: "none" }} type="button">
       <PlusOutlined />
-      <div style={{ marginTop: 8 }}>Upload</div>
+      <div style={{ marginTop: 8 }}>{dict.upload}</div>
     </button>
   );
 
   return (
-    <>
-      <Upload
-        action="/api/v1/vendor/upload"
-        listType="picture-card"
-        fileList={fileList}
-        onChange={handleChange}
-      >
-        {fileList.length >= UPLOAD_MAX_COUNT ? null : uploadButton}
-      </Upload>
-    </>
+    <Upload
+      action="/api/v1/vendor/upload"
+      listType="picture-card"
+      fileList={fileList}
+      onChange={handleChange}
+    >
+      {fileList.length >= UPLOAD_MAX_COUNT ? null : uploadButton}
+    </Upload>
   );
 };
 

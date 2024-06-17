@@ -1,19 +1,26 @@
 {
   "common": {
     "all_rights_reserved": "Всі права захищені",
+    "city": "Місто",
+    "country": "Країна",
     "dashboard": "Панель керування",
+    "description": "Опис",
     "email": "Електронна пошта",
     "first_name": "Ім'я",
     "homepage": "Домашня сторінка",
     "logout": "Вийти",
+    "name": "Ім'я",
     "phone": "Телефон",
+    "price": "Ціна",
     "search": "Пошук",
     "second_name": "Прізвище",
     "select_city": "Виберіть місто",
-    "submit": "Відправити"
+    "submit": "Відправити",
+    "upload": "Завантажити"
   },
   "dashboard": {
     "common": {
+      "create_a_new_listing": "Створити нове оголошення",
       "my_listings": "Мої оголошення",
       "my_profile": "Мій профіль"
     }
