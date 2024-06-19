@@ -1,3 +1,4 @@
+import axios from "axios";
 import { ProductResDto } from "@/backend/models/product.schema";
 import { API_URL } from "@shared/lib/variables";
 
@@ -9,12 +10,16 @@ interface ProductService {
   get: (id: string) => Promise<ProductResDto>;
 }
 const productService: ProductService = {
-  getAll: async (params) =>
-    await fetch(
+  getAll: async (params) => {
+    const { data } = await axios.get<ProductResDto[]>(
       `${API_URL}/api/v1/products?` + new URLSearchParams(params),
-    ).then((data) => data.json()),
-  get: async (id) =>
-    await fetch(`${API_URL}/api/v1/products/${id}`).then((data) => data.json()),
+    );
+    return data;
+  },
+  get: async (id) => {
+    const { data } = await axios.get(`${API_URL}/api/v1/products/${id}`);
+    return data;
+  },
 };
 
 export { productService, type ProductResDto };

@@ -1,14 +1,16 @@
 "use client";
-import { Button } from "antd";
+import { Button, Descriptions } from "antd";
 import { useQuery } from "@tanstack/react-query";
 
 import { vendorService } from "@/app/[locale]/(public)/_services/vendor.service";
+import { useDictionary } from "@shared/i18n";
 
 interface Props {
   id: string;
 }
 
 const ContactSeller = ({ id }: Props) => {
+  const { dictionary } = useDictionary();
   const { data: vendor, refetch } = useQuery({
     queryKey: ["getSellerInfo", id],
     queryFn: () => {
@@ -18,13 +20,34 @@ const ContactSeller = ({ id }: Props) => {
   });
 
   const handleClick = () => {
-    refetch();
+    void refetch();
   };
 
   return (
     <>
       {!!vendor ? (
-        <div> Email: {vendor.email}</div>
+        // TODO: Change to another component. Descriptions are not for this purpose
+
+        <Descriptions title={dictionary.common.sellers_info}>
+          <Descriptions.Item
+            style={{ display: "block", paddingBottom: 0 }}
+            label={dictionary.common.name}
+          >
+            {vendor.firstName}
+          </Descriptions.Item>
+          <Descriptions.Item
+            style={{ display: "block", paddingBottom: 0 }}
+            label={dictionary.common.email}
+          >
+            {vendor.email}
+          </Descriptions.Item>
+          <Descriptions.Item
+            style={{ display: "block", paddingBottom: 0 }}
+            label={dictionary.common.phone}
+          >
+            {vendor.phoneNumber}
+          </Descriptions.Item>
+        </Descriptions>
       ) : (
         <Button
           type="primary"
@@ -32,7 +55,7 @@ const ContactSeller = ({ id }: Props) => {
           style={{ marginTop: "2rem" }}
           onClick={handleClick}
         >
-          Contact the Seller
+          {dictionary.common.contact_the_seller}
         </Button>
       )}
     </>

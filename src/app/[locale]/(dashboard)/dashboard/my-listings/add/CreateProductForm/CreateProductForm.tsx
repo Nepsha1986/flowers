@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Button, Form, FormProps, Input, InputNumber } from "antd";
+import { Button, Form, FormProps, Input, InputNumber, Select } from "antd";
 
 import { productService } from "@dashboard/_services/vendor/product.service";
 import ImagesUpload from "../../_containers/ImagesUpload";
@@ -23,11 +23,11 @@ type FieldType = {
   price: number;
   country: string;
   city: string;
+  state: number;
 };
 
 const CreateProductForm: React.FC = () => {
   const { dictionary } = useDictionary();
-  const dict = dictionary.common;
   const [images, setImages] = useState<string[]>([]);
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
     await productService.add({
@@ -41,14 +41,19 @@ const CreateProductForm: React.FC = () => {
   };
 
   return (
-    <Form {...formItemLayout} onFinish={onFinish} style={{ maxWidth: 600 }}>
+    <Form
+      data-testid="create_product_form"
+      {...formItemLayout}
+      onFinish={onFinish}
+      style={{ maxWidth: 600 }}
+    >
       <ImagesUpload
         onChange={(images) => {
           setImages(images);
         }}
       />
       <Form.Item
-        label={dict.name}
+        label={dictionary.common.name}
         name="name"
         rules={[{ required: true, message: "Please input!" }]}
       >
@@ -56,7 +61,7 @@ const CreateProductForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item
-        label={dict.description}
+        label={dictionary.common.description}
         name="description"
         rules={[{ required: true, message: "Please input!" }]}
       >
@@ -64,7 +69,7 @@ const CreateProductForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item
-        label={dict.country}
+        label={dictionary.common.country}
         name="country"
         initialValue="Ukraine"
         rules={[{ required: true, message: "Please input!" }]}
@@ -73,7 +78,7 @@ const CreateProductForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item
-        label={dict.city}
+        label={dictionary.common.city}
         name="city"
         rules={[{ required: true, message: "Please input!" }]}
       >
@@ -81,7 +86,41 @@ const CreateProductForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item
-        label={dict.price}
+        rules={[{ required: true, message: "Please input!" }]}
+        name="state"
+        label={dictionary.common.state}
+      >
+        <Select
+          options={[
+            {
+              value: 5,
+              label: dictionary.dashboard.create_product_form.state_options.new,
+            },
+            {
+              value: 4,
+              label:
+                dictionary.dashboard.create_product_form.state_options.perfect,
+            },
+            {
+              value: 3,
+              label:
+                dictionary.dashboard.create_product_form.state_options.good,
+            },
+            {
+              value: 2,
+              label:
+                dictionary.dashboard.create_product_form.state_options.average,
+            },
+            {
+              value: 1,
+              label: dictionary.dashboard.create_product_form.state_options.bad,
+            },
+          ]}
+        />
+      </Form.Item>
+
+      <Form.Item
+        label={dictionary.common.price}
         name="price"
         rules={[{ required: true, message: "Please input!" }]}
       >
@@ -90,7 +129,7 @@ const CreateProductForm: React.FC = () => {
 
       <Form.Item wrapperCol={{ offset: 6, span: 16 }}>
         <Button type="primary" htmlType="submit">
-          {dict.submit}
+          {dictionary.common.submit}
         </Button>
       </Form.Item>
     </Form>

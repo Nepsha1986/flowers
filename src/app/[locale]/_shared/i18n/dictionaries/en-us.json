@@ -2,6 +2,7 @@
   "common": {
     "all_rights_reserved": "All Rights Reserved",
     "city": "City",
+    "contact_the_seller": "Contact the Seller",
     "country": "Country",
     "dashboard": "Dashboard",
     "description": "description",
@@ -15,6 +16,8 @@
     "search": "Search",
     "second_name": "Second name",
     "select_city": "Select city",
+    "sellers_info": "Seller's Information",
+    "state": "State",
     "submit": "Submit",
     "upload": "Upload"
   },
@@ -23,12 +26,30 @@
       "create_a_new_listing": "Create a New Listing",
       "my_listings": "My Listings",
       "my_profile": "My Profile"
+    },
+    "create_product_form": {
+      "state_options": {
+        "new": "New (The bouquet has just been assembled, the flowers are fresh and look great)",
+        "perfect": "Perfect (The bouquet was assembled recently, the flowers are in good condition)",
+        "good": "Good (The bouquet has been standing for a while, but the flowers are still fresh and beautiful)",
+        "average": "Average (The bouquet has been standing for several days, the flowers have started to wilt a bit)",
+        "bad": "Bad (The bouquet has wilted, but can be used for special purposes)"
+      }
     }
   },
   "pages": {
     "city": {
       "heading": "Courier Delivery of Flowers in ${1}",
       "sub_heading": "Explore our collection of the freshest and most beautiful flowers that will enhance the important moments of your life. Our team of florists is ready to craft unique bouquets delivered right to your doorstep in any corner of ${1}. Order flowers now and gift beauty and joy to your loved ones!"
+    },
+    "single_product_page": {
+      "bouquet_state": {
+        "new": "At the time of publication, the seller stated that the bouquet was just assembled, the flowers are fresh, and they look excellent.",
+        "perfect": "At the time of publication, the seller stated that the bouquet was recently assembled, and the flowers are in pristine condition.",
+        "good": "At the time of publication, the seller stated that the bouquet has been standing for a while, but the flowers are still fresh and beautiful.",
+        "average": "At the time of publication, the seller stated that the bouquet has been standing for several days, and the flowers have started to wilt slightly.",
+        "bad": "At the time of publication, the seller stated that the bouquet has wilted, but it can still be used for special purposes."
+      }
     }
   },
   "components": {

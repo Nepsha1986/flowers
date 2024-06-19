@@ -5,6 +5,7 @@ export const ProductModel = z.object({
   name: z.string().max(100),
   description: z.string().max(800),
   price: z.number().max(20000).min(0),
+  state: z.number().int().min(1).max(5),
   vendorId: z.string(),
   images: z.array(z.string()),
   location: z.object({
