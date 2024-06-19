@@ -2,7 +2,7 @@
 import { Button, Descriptions } from "antd";
 import { useQuery } from "@tanstack/react-query";
 
-import { vendorService } from "@/app/[locale]/(public)/_services/vendor.service";
+import { vendorService } from "@public/_services/vendor.service";
 import { useDictionary } from "@shared/i18n";
 
 interface Props {
@@ -11,7 +11,11 @@ interface Props {
 
 const ContactSeller = ({ id }: Props) => {
   const { dictionary } = useDictionary();
-  const { data: vendor, refetch } = useQuery({
+  const {
+    data: vendor,
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["getSellerInfo", id],
     queryFn: () => {
       return vendorService.get(id);
@@ -53,6 +57,7 @@ const ContactSeller = ({ id }: Props) => {
           type="primary"
           size="large"
           style={{ marginTop: "2rem" }}
+          loading={isLoading}
           onClick={handleClick}
         >
           {dictionary.common.contact_the_seller}

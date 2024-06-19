@@ -1,9 +1,9 @@
 import React from "react";
 import classNames from "classnames";
-import Icon, { GlobalOutlined } from "@ant-design/icons";
+import { GlobalOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
-import { Locale } from "@shared/i18n/locales";
+import { Locale } from "@shared/i18n";
 
 import styles from "./styles.module.css";
 
