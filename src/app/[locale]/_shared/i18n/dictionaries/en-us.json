@@ -8,6 +8,7 @@
     "dashboard": "Dashboard",
     "description": "description",
     "email": "Email",
+    "empty_listings_info": "Unfortunately, at the moment, no one in this region has listed flowers for sale. Please try again later",
     "first_name": "First name",
     "homepage": "Homepage",
     "logout": "Logout",

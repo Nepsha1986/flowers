@@ -20,8 +20,8 @@ const ProductCard = forwardRef<React.RefObject<"div">, Props>(
 
     return (
       <Link
-        href={`/${locale}/products/${id}`}
         data-testid="product_card"
+        href={`/${locale}/products/${id}`}
         className={styles.productCard}
       >
         <div className={styles.productCard__image}>

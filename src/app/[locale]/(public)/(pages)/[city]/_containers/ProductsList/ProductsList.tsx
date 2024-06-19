@@ -1,15 +1,20 @@
-import { Col, Row } from "antd";
+import { Col, Empty, Row } from "antd";
 
-import { productService } from "@/app/[locale]/(public)/_services/product.service";
-import ProductCard from "@/app/[locale]/(public)/_components/ProductCard";
+import { productService } from "@public/_services/product.service";
+import ProductCard from "@public/_components/ProductCard";
 
 interface Props {
   city: string;
   country: string;
+  translations: {
+    empty: string;
+  };
 }
 
-const ProductsList = async ({ city, country }: Props) => {
+const ProductsList = async ({ city, country, translations }: Props) => {
   const products = await productService.getAll({ city, country });
+
+  if (!products.length) return <Empty description={translations.empty} />;
 
   return (
     <Row gutter={16} style={{ paddingTop: "1rem", paddingBottom: "1rem" }}>

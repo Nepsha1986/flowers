@@ -30,7 +30,7 @@ const CitySelect = () => {
         }))}
       />
 
-      <Button type="primary" onClick={handleClick}>
+      <Button type="primary" disabled={!val} onClick={handleClick}>
         {dictionary.common.search}
       </Button>
     </div>
