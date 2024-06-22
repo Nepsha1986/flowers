@@ -1,0 +1,8 @@
+.appFooter {
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 1.25rem 2rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,7 @@
+.footerNav {
+  display: inline-flex;
+  flex-flow: row;
+  gap: 1.5rem;
+  align-items: center;
+  margin-left: 3rem;
+}

@@ -1,4 +1,4 @@
-import { Locale } from "@shared/i18n/locales";
+import { type Locale } from "@shared/i18n";
 
 import SignIn from "@shared/containers/SignIn";
 import AppLogo from "@shared/components/AppLogo";

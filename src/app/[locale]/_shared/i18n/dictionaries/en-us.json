@@ -1,8 +1,10 @@
 {
   "common": {
+    "about": "About Us",
     "all_rights_reserved": "All Rights Reserved",
     "back": "Back",
     "city": "City",
+    "contacts": "Contacts",
     "contact_the_seller": "Contact the Seller",
     "country": "Country",
     "dashboard": "Dashboard",
